@@ -1,0 +1,847 @@
+{
+  "topic_code": "TOPIC_04",
+  "topic_name": "Variables + Math",
+  "suggested_maps": [
+    {
+      "id": "topic04-01-variable-move",
+      "level": 1,
+      "titleKey": "Challenge.topic04-01.Title",
+      "descriptionKey": "Challenge.topic04-01.Description",
+      "translations": {
+        "en": {
+          "Challenge.topic04-01.Title": "Variable Movement",
+          "Challenge.topic04-01.Description": "Use a variable to control how many steps the character moves."
+        },
+        "vi": {
+          "Challenge.topic04-01.Title": "Biến Điều Khiển Steps",
+          "Challenge.topic04-01.Description": "Sử dụng một biến để điều khiển số bước di chuyển của nhân vật."
+        }
+      },
+      "generation_config": {
+        "map_type": "simple_path",
+        "logic_type": "variable_loop",
+        "num_variants": 1,
+        "params": {
+          "path_length": 4,
+          "obstacles": 0,
+          "items_to_place": [
+            "crystal",
+            "crystal"
+          ],
+          "start_blocks_type": "empty"
+        }
+      },
+      "blockly_config": {
+        "toolbox_preset": "variables_basic"
+      },
+      "solution_config": {
+        "type": "reach_target",
+        "itemGoals": {
+          "crystal": 2
+        }
+      }
+    },
+    {
+      "id": "topic04-02-fixbug-var-value",
+      "level": 2,
+      "titleKey": "Challenge.topic04-02.Title",
+      "descriptionKey": "Challenge.topic04-02.Description",
+      "translations": {
+        "en": {
+          "Challenge.topic04-02.Title": "Fix: Incorrect Variable Value",
+          "Challenge.topic04-02.Description": "The 'steps' variable has the wrong value, causing the loop to stop early. Correct it!"
+        },
+        "vi": {
+          "Challenge.topic04-02.Title": "Sửa lỗi: Sai Giá Trị Biến",
+          "Challenge.topic04-02.Description": "Biến 'steps' có giá trị sai, khiến vòng lặp dừng sớm. Hãy sửa lại nó!"
+        }
+      },
+      "generation_config": {
+        "map_type": "simple_path",
+        "logic_type": "variable_loop",
+        "num_variants": 1,
+        "params": {
+          "path_length": 4,
+          "obstacles": 0,
+          "items_to_place": [
+            "crystal",
+            "crystal"
+          ],
+          "start_blocks_type": "buggy_solution",
+          "bug_type": "incorrect_initial_value",
+          "bug_config": {
+            "target": "variable"
+          }
+        }
+      },
+      "blockly_config": {
+        "toolbox_preset": "variables_basic"
+      },
+      "solution_config": {
+        "type": "reach_target",
+        "itemGoals": {
+          "crystal": 2
+        }
+      }
+    },
+    {
+      "id": "topic04-03-variable-move-adv",
+      "level": 3,
+      "titleKey": "Challenge.topic04-03.Title",
+      "descriptionKey": "Challenge.topic04-03.Description",
+      "translations": {
+        "en": {
+          "Challenge.topic04-03.Title": "Variable Movement (Adv)",
+          "Challenge.topic04-03.Description": "Practice using a variable to control a longer and more complex path."
+        },
+        "vi": {
+          "Challenge.topic04-03.Title": "Biến Điều Khiển Steps (NC)",
+          "Challenge.topic04-03.Description": "Luyện tập sử dụng biến để điều khiển một con đường dài và phức tạp hơn."
+        }
+      },
+      "generation_config": {
+        "map_type": "simple_path",
+        "logic_type": "variable_loop",
+        "num_variants": 1,
+        "params": {
+          "path_length": 8,
+          "obstacles": 1,
+          "items_to_place": [],
+          "turns": 2,
+          "start_blocks_type": "empty"
+        }
+      },
+      "blockly_config": {
+        "toolbox_preset": "variables_basic"
+      },
+      "solution_config": {
+        "type": "reach_target",
+        "itemGoals": {}
+      }
+    },
+    {
+      "id": "topic04-04-state-tracking",
+      "level": 4,
+      "titleKey": "Challenge.topic04-04.Title",
+      "descriptionKey": "Challenge.topic04-04.Description",
+      "translations": {
+        "en": {
+          "Challenge.topic04-04.Title": "State Tracking",
+          "Challenge.topic04-04.Description": "Use a variable as a counter to keep track of how many items you've collected."
+        },
+        "vi": {
+          "Challenge.topic04-04.Title": "Đếm Trạng Thái",
+          "Challenge.topic04-04.Description": "Sử dụng một biến làm bộ đếm để theo dõi số vật phẩm bạn đã thu thập."
+        }
+      },
+      "generation_config": {
+        "map_type": "simple_path",
+        "logic_type": "variable_counter",
+        "num_variants": 1,
+        "params": {
+          "path_length": 7,
+          "obstacles": 0,
+          "items_to_place": [
+            "crystal",
+            "crystal",
+            "crystal"
+          ],
+          "start_blocks_type": "empty"
+        }
+      },
+      "blockly_config": {
+        "toolbox_preset": "variables_basic"
+      },
+      "solution_config": {
+        "type": "reach_target",
+        "itemGoals": {
+          "crystal": 3
+        }
+      }
+    },
+    {
+      "id": "topic04-05-fixbug-math-op",
+      "level": 5,
+      "titleKey": "Challenge.topic04-05.Title",
+      "descriptionKey": "Challenge.topic04-05.Description",
+      "translations": {
+        "en": {
+          "Challenge.topic04-05.Title": "Fix: Incorrect Math Operator",
+          "Challenge.topic04-05.Description": "The program is using subtraction (-) instead of addition (+). Find and fix the operator."
+        },
+        "vi": {
+          "Challenge.topic04-05.Title": "Sửa lỗi: Toán Tử Sai",
+          "Challenge.topic04-05.Description": "Chương trình đang dùng phép trừ (-) thay vì phép cộng (+). Hãy tìm và sửa lại toán tử."
+        }
+      },
+      "generation_config": {
+        "map_type": "simple_path",
+        "logic_type": "math_basic",
+        "num_variants": 1,
+        "params": {
+          "path_length": 5,
+          "obstacles": 0,
+          "items_to_place": [],
+          "start_blocks_type": "buggy_solution",
+          "bug_type": "incorrect_math_operator",
+          "bug_config": {
+            "target": "main"
+          }
+        }
+      },
+      "blockly_config": {
+        "toolbox_preset": "variables_full"
+      },
+      "solution_config": {
+        "type": "reach_target",
+        "itemGoals": {}
+      }
+    },
+    {
+      "id": "topic04-06-state-tracking-adv",
+      "level": 6,
+      "titleKey": "Challenge.topic04-06.Title",
+      "descriptionKey": "Challenge.topic04-06.Description",
+      "translations": {
+        "en": {
+          "Challenge.topic04-06.Title": "State Tracking (Adv)",
+          "Challenge.topic04-06.Description": "Track both collected crystals and toggled switches using separate variables."
+        },
+        "vi": {
+          "Challenge.topic04-06.Title": "Đếm Trạng Thái (NC)",
+          "Challenge.topic04-06.Description": "Theo dõi cả pha lê đã thu thập và công tắc đã bật bằng các biến riêng biệt."
+        }
+      },
+      "generation_config": {
+        "map_type": "simple_path",
+        "logic_type": "variable_counter",
+        "num_variants": 1,
+        "params": {
+          "path_length": 9,
+          "obstacles": 1,
+          "items_to_place": [
+            "crystal",
+            "crystal",
+            "switch",
+            "switch"
+          ],
+          "turns": 2,
+          "start_blocks_type": "empty"
+        }
+      },
+      "blockly_config": {
+        "toolbox_preset": "variables_full"
+      },
+      "solution_config": {
+        "type": "reach_target",
+        "itemGoals": {
+          "crystal": 2,
+          "switch": 2
+        }
+      }
+    },
+    {
+      "id": "topic04-07-math-path",
+      "level": 7,
+      "titleKey": "Challenge.topic04-07.Title",
+      "descriptionKey": "Challenge.topic04-07.Description",
+      "translations": {
+        "en": {
+          "Challenge.topic04-07.Title": "Math Path",
+          "Challenge.topic04-07.Description": "Calculate the total number of steps needed by adding two variables together."
+        },
+        "vi": {
+          "Challenge.topic04-07.Title": "Tính Toán Đường Đi",
+          "Challenge.topic04-07.Description": "Tính toán tổng số bước cần đi bằng cách cộng hai biến lại với nhau."
+        }
+      },
+      "generation_config": {
+        "map_type": "simple_path",
+        "logic_type": "math_basic",
+        "num_variants": 1,
+        "params": {
+          "path_length": 6,
+          "obstacles": 1,
+          "items_to_place": [],
+          "start_blocks_type": "empty"
+        }
+      },
+      "blockly_config": {
+        "toolbox_preset": "variables_full"
+      },
+      "solution_config": {
+        "type": "reach_target",
+        "itemGoals": {}
+      }
+    },
+    {
+      "id": "topic04-08-fixbug-missing-update",
+      "level": 8,
+      "titleKey": "Challenge.topic04-08.Title",
+      "descriptionKey": "Challenge.topic04-08.Description",
+      "translations": {
+        "en": {
+          "Challenge.topic04-08.Title": "Fix: Missing Variable Update",
+          "Challenge.topic04-08.Description": "The counter variable is not being updated inside the loop, causing an infinite loop. Add the 'change by' block."
+        },
+        "vi": {
+          "Challenge.topic04-08.Title": "Sửa lỗi: Thiếu Cập Nhật Biến",
+          "Challenge.topic04-08.Description": "Biến đếm không được cập nhật trong vòng lặp, gây ra lặp vô hạn. Hãy thêm khối 'thay đổi'."
+        }
+      },
+      "generation_config": {
+        "map_type": "simple_path",
+        "logic_type": "variable_counter",
+        "num_variants": 1,
+        "params": {
+          "path_length": 5,
+          "obstacles": 0,
+          "items_to_place": [
+            "crystal",
+            "crystal"
+          ],
+          "start_blocks_type": "buggy_solution",
+          "bug_type": "missing_variable_update",
+          "bug_config": {
+            "target": "loop"
+          }
+        }
+      },
+      "blockly_config": {
+        "toolbox_preset": "variables_basic"
+      },
+      "solution_config": {
+        "type": "reach_target",
+        "itemGoals": {
+          "crystal": 2
+        }
+      }
+    },
+    {
+      "id": "topic04-09-math-path-adv",
+      "level": 9,
+      "titleKey": "Challenge.topic04-09.Title",
+      "descriptionKey": "Challenge.topic04-09.Description",
+      "translations": {
+        "en": {
+          "Challenge.topic04-09.Title": "Math Path (Adv)",
+          "Challenge.topic04-09.Description": "Use multiple math operations (addition and subtraction) to find the correct path."
+        },
+        "vi": {
+          "Challenge.topic04-09.Title": "Tính Toán Đường Đi (NC)",
+          "Challenge.topic04-09.Description": "Sử dụng nhiều phép toán (cộng và trừ) để tìm ra con đường chính xác."
+        }
+      },
+      "generation_config": {
+        "map_type": "simple_path",
+        "logic_type": "math_complex",
+        "num_variants": 1,
+        "params": {
+          "path_length": 10,
+          "obstacles": 2,
+          "items_to_place": [],
+          "turns": 3,
+          "start_blocks_type": "empty"
+        }
+      },
+      "blockly_config": {
+        "toolbox_preset": "variables_full"
+      },
+      "solution_config": {
+        "type": "reach_target",
+        "itemGoals": {}
+      }
+    },
+    {
+      "id": "topic04-10-coordinate-math",
+      "level": 10,
+      "titleKey": "Challenge.topic04-10.Title",
+      "descriptionKey": "Challenge.topic04-10.Description",
+      "translations": {
+        "en": {
+          "Challenge.topic04-10.Title": "Coordinate Math",
+          "Challenge.topic04-10.Description": "Use variables 'x' and 'z' to navigate to a specific coordinate on the map."
+        },
+        "vi": {
+          "Challenge.topic04-10.Title": "Toán Học Tọa Độ",
+          "Challenge.topic04-10.Description": "Sử dụng các biến 'x' và 'z' để di chuyển đến một tọa độ cụ thể trên bản đồ."
+        }
+      },
+      "generation_config": {
+        "map_type": "grid",
+        "logic_type": "coordinate_math",
+        "num_variants": 1,
+        "params": {
+          "items_to_place": [
+            "crystal"
+          ],
+          "start_blocks_type": "empty"
+        }
+      },
+      "blockly_config": {
+        "toolbox_preset": "variables_full"
+      },
+      "solution_config": {
+        "type": "reach_target",
+        "itemGoals": {
+          "crystal": 1
+        }
+      }
+    },
+    {
+      "id": "topic04-11-fixbug-optimization",
+      "level": 11,
+      "titleKey": "Challenge.topic04-11.Title",
+      "descriptionKey": "Challenge.topic04-11.Description",
+      "translations": {
+        "en": {
+          "Challenge.topic04-11.Title": "Fix: Variable Optimization",
+          "Challenge.topic04-11.Description": "This program works but uses too many blocks. Optimize it by using a variable in a loop."
+        },
+        "vi": {
+          "Challenge.topic04-11.Title": "Sửa lỗi: Tối Ưu Hóa Biến",
+          "Challenge.topic04-11.Description": "Chương trình này chạy được nhưng dùng quá nhiều khối. Hãy tối ưu nó bằng cách dùng biến trong vòng lặp."
+        }
+      },
+      "generation_config": {
+        "map_type": "simple_path",
+        "logic_type": "sequencing",
+        "num_variants": 1,
+        "params": {
+          "path_length": 5,
+          "obstacles": 0,
+          "items_to_place": [],
+          "start_blocks_type": "buggy_solution",
+          "bug_type": "optimization_no_variable",
+          "bug_config": {
+            "target": "main"
+          }
+        }
+      },
+      "blockly_config": {
+        "toolbox_preset": "variables_basic"
+      },
+      "solution_config": {
+        "type": "reach_target",
+        "itemGoals": {}
+      }
+    },
+    {
+      "id": "topic04-12-coordinate-math-adv",
+      "level": 12,
+      "titleKey": "Challenge.topic04-12.Title",
+      "descriptionKey": "Challenge.topic04-12.Description",
+      "translations": {
+        "en": {
+          "Challenge.topic04-12.Title": "Coordinate Math (Adv)",
+          "Challenge.topic04-12.Description": "Navigate a complex path with obstacles by calculating target coordinates."
+        },
+        "vi": {
+          "Challenge.topic04-12.Title": "Toán Học Tọa Độ (NC)",
+          "Challenge.topic04-12.Description": "Di chuyển trên một con đường phức tạp có chướng ngại vật bằng cách tính toán tọa độ đích."
+        }
+      },
+      "generation_config": {
+        "map_type": "grid",
+        "logic_type": "coordinate_math",
+        "num_variants": 1,
+        "params": {
+          "obstacles": 2,
+          "items_to_place": [
+            "crystal"
+          ],
+          "start_blocks_type": "empty"
+        }
+      },
+      "blockly_config": {
+        "toolbox_preset": "variables_full"
+      },
+      "solution_config": {
+        "type": "reach_target",
+        "itemGoals": {
+          "crystal": 1
+        }
+      }
+    },
+    {
+      "id": "topic04-13-dynamic-repeat",
+      "level": 13,
+      "titleKey": "Challenge.topic04-13.Title",
+      "descriptionKey": "Challenge.topic04-13.Description",
+      "translations": {
+        "en": {
+          "Challenge.topic04-13.Title": "Dynamic Repeat",
+          "Challenge.topic04-13.Description": "Use a math expression (e.g., steps * 2) inside a repeat block to control movement."
+        },
+        "vi": {
+          "Challenge.topic04-13.Title": "Lặp Lại Động",
+          "Challenge.topic04-13.Description": "Sử dụng một biểu thức toán học (ví dụ: steps * 2) bên trong khối lặp để điều khiển di chuyển."
+        }
+      },
+      "generation_config": {
+        "map_type": "simple_path",
+        "logic_type": "math_expression_loop",
+        "num_variants": 1,
+        "params": {
+          "path_length": 7,
+          "obstacles": 1,
+          "items_to_place": [
+            "crystal",
+            "crystal"
+          ],
+          "start_blocks_type": "empty"
+        }
+      },
+      "blockly_config": {
+        "toolbox_preset": "variables_full"
+      },
+      "solution_config": {
+        "type": "reach_target",
+        "itemGoals": {
+          "crystal": 2
+        }
+      }
+    },
+    {
+      "id": "topic04-14-fixbug-math-expression",
+      "level": 14,
+      "titleKey": "Challenge.topic04-14.Title",
+      "descriptionKey": "Challenge.topic04-14.Description",
+      "translations": {
+        "en": {
+          "Challenge.topic04-14.Title": "Fix: Incorrect Math Expression",
+          "Challenge.topic04-14.Description": "The math expression used for the loop is incorrect (e.g., a * b instead of a + b). Find and fix it."
+        },
+        "vi": {
+          "Challenge.topic04-14.Title": "Sửa lỗi: Sai Biểu Thức Toán Học",
+          "Challenge.topic04-14.Description": "Biểu thức toán học dùng cho vòng lặp bị sai (ví dụ: a * b thay vì a + b). Hãy tìm và sửa nó."
+        }
+      },
+      "generation_config": {
+        "map_type": "simple_path",
+        "logic_type": "math_expression_loop",
+        "num_variants": 1,
+        "params": {
+          "path_length": 5,
+          "obstacles": 1,
+          "items_to_place": [],
+          "start_blocks_type": "buggy_solution",
+          "bug_type": "incorrect_math_expression",
+          "bug_config": {
+            "target": "loop"
+          }
+        }
+      },
+      "blockly_config": {
+        "toolbox_preset": "variables_full"
+      },
+      "solution_config": {
+        "type": "reach_target",
+        "itemGoals": {}
+      }
+    },
+    {
+      "id": "topic04-15-dynamic-repeat-adv",
+      "level": 15,
+      "titleKey": "Challenge.topic04-15.Title",
+      "descriptionKey": "Challenge.topic04-15.Description",
+      "translations": {
+        "en": {
+          "Challenge.topic04-15.Title": "Dynamic Repeat (Adv)",
+          "Challenge.topic04-15.Description": "Solve a puzzle where the number of repetitions depends on a more complex math formula."
+        },
+        "vi": {
+          "Challenge.topic04-15.Title": "Lặp Lại Động (NC)",
+          "Challenge.topic04-15.Description": "Giải một câu đố nơi số lần lặp lại phụ thuộc vào một công thức toán học phức tạp hơn."
+        }
+      },
+      "generation_config": {
+        "map_type": "simple_path",
+        "logic_type": "math_expression_loop",
+        "num_variants": 1,
+        "params": {
+          "path_length": 9,
+          "obstacles": 2,
+          "items_to_place": [
+            "crystal",
+            "crystal",
+            "crystal"
+          ],
+          "turns": 2,
+          "start_blocks_type": "empty"
+        }
+      },
+      "blockly_config": {
+        "toolbox_preset": "variables_full"
+      },
+      "solution_config": {
+        "type": "reach_target",
+        "itemGoals": {
+          "crystal": 3
+        }
+      }
+    },
+    {
+      "id": "topic04-16-fibonacci-pattern",
+      "level": 16,
+      "titleKey": "Challenge.topic04-16.Title",
+      "descriptionKey": "Challenge.topic04-16.Description",
+      "translations": {
+        "en": {
+          "Challenge.topic04-16.Title": "Fibonacci Patterns",
+          "Challenge.topic04-16.Description": "Use variables to generate the Fibonacci sequence and activate switches accordingly."
+        },
+        "vi": {
+          "Challenge.topic04-16.Title": "Mẫu Fibonacci",
+          "Challenge.topic04-16.Description": "Sử dụng các biến để tạo ra chuỗi Fibonacci và kích hoạt các công tắc tương ứng."
+        }
+      },
+      "generation_config": {
+        "map_type": "simple_path",
+        "logic_type": "advanced_algorithm",
+        "num_variants": 1,
+        "params": {
+          "path_length": 8,
+          "obstacles": 0,
+          "items_to_place": [
+            "switch",
+            "switch",
+            "switch",
+            "switch"
+          ],
+          "start_blocks_type": "empty"
+        }
+      },
+      "blockly_config": {
+        "toolbox_preset": "variables_full"
+      },
+      "solution_config": {
+        "type": "reach_target",
+        "algorithm_template": {
+          "name": "fibonacci",
+          "variables": ["a", "b", "temp"]
+        },
+        "itemGoals": {
+          "switch": 4
+        }
+      }
+    },
+    {
+      "id": "topic04-17-fixbug-fibonacci",
+      "level": 17,
+      "titleKey": "Challenge.topic04-17.Title",
+      "descriptionKey": "Challenge.topic04-17.Description",
+      "translations": {
+        "en": {
+          "Challenge.topic04-17.Title": "Fix: Fibonacci Logic",
+          "Challenge.topic04-17.Description": "The logic for swapping variables to generate the Fibonacci sequence is incorrect. Debug the function!"
+        },
+        "vi": {
+          "Challenge.topic04-17.Title": "Sửa lỗi: Logic Fibonacci",
+          "Challenge.topic04-17.Description": "Logic hoán đổi các biến để tạo chuỗi Fibonacci đang bị sai. Hãy gỡ lỗi cho chương trình!"
+        }
+      },
+      "generation_config": {
+        "map_type": "simple_path",
+        "logic_type": "advanced_algorithm",
+        "num_variants": 1,
+        "params": {
+          "path_length": 9,
+          "obstacles": 0,
+          "items_to_place": [
+            "switch",
+            "switch",
+            "switch",
+            "switch",
+            "switch"
+          ],
+          "start_blocks_type": "buggy_solution",
+          "bug_type": "wrong_logic_in_algorithm",
+          "bug_config": {
+            "target": "main"
+          }
+        }
+      },
+      "blockly_config": {
+        "toolbox_preset": "variables_full"
+      },
+      "solution_config": {
+        "type": "reach_target",
+        "algorithm_template": {
+          "name": "fibonacci",
+          "variables": ["a", "b", "temp"]
+        },
+        "itemGoals": {
+          "switch": 5
+        }
+      }
+    },
+    {
+      "id": "topic04-18-fibonacci-adv",
+      "level": 18,
+      "titleKey": "Challenge.topic04-18.Title",
+      "descriptionKey": "Challenge.topic04-18.Description",
+      "translations": {
+        "en": {
+          "Challenge.topic04-18.Title": "Fibonacci Patterns (Adv)",
+          "Challenge.topic04-18.Description": "This is a longer Fibonacci path. Apply what you've learned to solve this advanced challenge."
+        },
+        "vi": {
+          "Challenge.topic04-18.Title": "Mẫu Fibonacci (NC)",
+          "Challenge.topic04-18.Description": "Đây là một con đường Fibonacci dài hơn. Hãy áp dụng những gì bạn đã học để giải thử thách nâng cao này."
+        }
+      },
+      "generation_config": {
+        "map_type": "simple_path",
+        "logic_type": "advanced_algorithm",
+        "num_variants": 1,
+        "params": {
+          "path_length": 12,
+          "obstacles": 0,
+          "items_to_place": [
+            "switch",
+            "switch",
+            "switch",
+            "switch",
+            "switch",
+            "switch"
+          ],
+          "start_blocks_type": "empty"
+        }
+      },
+      "blockly_config": {
+        "toolbox_preset": "variables_full"
+      },
+      "solution_config": {
+        "type": "reach_target",
+        "algorithm_template": {
+          "name": "fibonacci",
+          "variables": ["a", "b", "temp"]
+        },
+        "itemGoals": {
+          "switch": 6
+        }
+      }
+    },
+    {
+      "id": "topic04-19-config-driven",
+      "level": 19,
+      "titleKey": "Challenge.topic04-19.Title",
+      "descriptionKey": "Challenge.topic04-19.Description",
+      "translations": {
+        "en": {
+          "Challenge.topic04-19.Title": "Config-Driven Execution",
+          "Challenge.topic04-19.Description": "Use variables as 'configs' to control the character's actions through a complex path with mixed elements."
+        },
+        "vi": {
+          "Challenge.topic04-19.Title": "Thực Thi Theo Cấu Hình",
+          "Challenge.topic04-19.Description": "Sử dụng các biến như 'cấu hình' để điều khiển hành động của nhân vật qua một con đường phức tạp với các yếu tố hỗn hợp."
+        }
+      },
+      "generation_config": {
+        "map_type": "simple_path",
+        "logic_type": "config_driven_execution",
+        "num_variants": 1,
+        "params": {
+          "path_length": 10,
+          "obstacles": 1,
+          "items_to_place": [
+            "crystal",
+            "switch"
+          ],
+          "turns": 2,
+          "start_blocks_type": "empty"
+        }
+      },
+      "blockly_config": {
+        "toolbox_preset": "variables_full"
+      },
+      "solution_config": {
+        "type": "reach_target",
+        "itemGoals": {
+          "crystal": 1,
+          "switch": 1
+        }
+      }
+    },
+    {
+      "id": "topic04-20-fixbug-optimization",
+      "level": 20,
+      "titleKey": "Challenge.topic04-20.Title",
+      "descriptionKey": "Challenge.topic04-20.Description",
+      "translations": {
+        "en": {
+          "Challenge.topic04-20.Title": "Fix: Optimization",
+          "Challenge.topic04-20.Description": "The program works but is inefficient. Refactor the code using variables to make it more optimal and use fewer blocks."
+        },
+        "vi": {
+          "Challenge.topic04-20.Title": "Sửa lỗi: Tối ưu hóa",
+          "Challenge.topic04-20.Description": "Chương trình chạy được nhưng không hiệu quả. Hãy tái cấu trúc mã bằng cách sử dụng các biến để tối ưu hơn và dùng ít khối hơn."
+        }
+      },
+      "generation_config": {
+        "map_type": "simple_path",
+        "logic_type": "config_driven_execution",
+        "num_variants": 1,
+        "params": {
+          "path_length": 9,
+          "obstacles": 1,
+          "items_to_place": [
+            "crystal",
+            "switch"
+          ],
+          "turns": 2,
+          "start_blocks_type": "buggy_solution",
+          "bug_type": "optimization_logic",
+          "bug_config": {
+            "target": "main"
+          }
+        }
+      },
+      "blockly_config": {
+        "toolbox_preset": "variables_full"
+      },
+      "solution_config": {
+        "type": "reach_target",
+        "itemGoals": {
+          "crystal": 1,
+          "switch": 1
+        }
+      }
+    },
+    {
+      "id": "topic04-21-math-puzzles",
+      "level": 21,
+      "titleKey": "Challenge.topic04-21.Title",
+      "descriptionKey": "Challenge.topic04-21.Description",
+      "translations": {
+        "en": {
+          "Challenge.topic04-21.Title": "Math Puzzles",
+          "Challenge.topic04-21.Description": "The number of steps you need to move is hidden in a math problem. Solve it to find the way!"
+        },
+        "vi": {
+          "Challenge.topic04-21.Title": "Câu Đố Toán Học",
+          "Challenge.topic04-21.Description": "Số bước bạn cần di chuyển được ẩn trong một bài toán. Hãy giải nó để tìm đường!"
+        }
+      },
+      "generation_config": {
+        "map_type": "simple_path",
+        "logic_type": "math_puzzle",
+        "num_variants": 1,
+        "params": {
+          "path_length": 6,
+          "obstacles": 1,
+          "items_to_place": [],
+          "start_blocks_type": "empty"
+        }
+      },
+      "blockly_config": {
+        "toolbox_preset": "variables_full"
+      },
+      "solution_config": {
+        "type": "reach_target",
+        "itemGoals": {}
+      }
+    }
+  ]
+}

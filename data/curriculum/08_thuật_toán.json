@@ -1,0 +1,172 @@
+{
+  "topic_code": "TOPIC_08_ALGORITHMS",
+  "topic_name": "Thuật toán",
+  "suggested_maps": [
+    {
+      "id": "topic08-req01-wall-follower",
+      "level": 1,
+      "titleKey": "Challenge.topic08-req01-wall-follower.Title",
+      "descriptionKey": "Challenge.topic08-req01-wall-follower.Description",
+      "translations": {
+        "vi": {
+          "Challenge.topic08-req01-wall-follower.Title": "Thuật toán Bám tường",
+          "Challenge.topic08-req01-wall-follower.Description": "Mê cung này thật phức tạp! Hãy áp dụng thuật toán 'bám tường' (luôn giữ một bức tường ở bên phải của bạn) để tìm đường ra."
+        }
+      },
+      "generation_config": {
+        "map_type": "complex_maze_2d",
+        "logic_type": "algorithm_design",
+        "num_variants": 2,
+        "params": {
+          "maze_width": [
+            7,
+            9
+          ],
+          "maze_depth": [
+            7,
+            9
+          ],
+          "start_blocks_type": "empty"
+        }
+      },
+      "blockly_config": {
+        "toolbox_preset": "full_toolbox_no_jump"
+      },
+      "solution_config": {
+        "type": "reach_target",
+        "itemGoals": {}
+      }
+    },
+    {
+      "id": "topic08-req02-flood-fill",
+      "level": 2,
+      "titleKey": "Challenge.topic08-req02-flood-fill.Title",
+      "descriptionKey": "Challenge.topic08-req02-flood-fill.Description",
+      "translations": {
+        "vi": {
+          "Challenge.topic08-req02-flood-fill.Title": "Thuật toán Lấp đầy",
+          "Challenge.topic08-req02-flood-fill.Description": "Nhiệm vụ của bạn là thu thập hết tất cả đá quý trên các hòn đảo. Hãy thiết kế một thuật toán để khám phá mọi ngóc ngách."
+        }
+      },
+      "generation_config": {
+        "map_type": "symmetrical_islands",
+        "logic_type": "algorithm_design",
+        "num_variants": 2,
+        "params": {
+          "num_islands": 3,
+          "items_to_place": "crystal",
+          "start_blocks_type": "empty"
+        }
+      },
+      "blockly_config": {
+        "toolbox_preset": "full_toolbox_no_jump"
+      },
+      "solution_config": {
+        "type": "reach_target",
+        "itemGoals": {
+          "crystal": "all"
+        }
+      }
+    },
+    {
+      "id": "topic08-req03-systematic-collection",
+      "level": 3,
+      "titleKey": "Challenge.topic08-req03-systematic-collection.Title",
+      "descriptionKey": "Challenge.topic08-req03-systematic-collection.Description",
+      "translations": {
+        "vi": {
+          "Challenge.topic08-req03-systematic-collection.Title": "Thu thập có hệ thống",
+          "Challenge.topic08-req03-systematic-collection.Description": "Đá quý nằm rải rác trong một mê cung lớn. Bạn cần một thuật toán hiệu quả để đảm bảo không bỏ sót viên nào."
+        }
+      },
+      "generation_config": {
+        "map_type": "complex_maze_2d",
+        "logic_type": "algorithm_design",
+        "num_variants": 2,
+        "params": {
+          "maze_width": 11,
+          "maze_depth": 11,
+          "items_to_place": [
+            "crystal",
+            "crystal",
+            "crystal"
+          ],
+          "start_blocks_type": "empty"
+        }
+      },
+      "blockly_config": { "toolbox_preset": "full_toolbox_no_jump" },
+      "solution_config": {
+        "type": "reach_target",
+        "itemGoals": {
+          "crystal": 3
+        }
+      }
+    },
+    {
+      "id": "topic08-req04-shortest-path",
+      "level": 4,
+      "titleKey": "Challenge.topic08-req04-shortest-path.Title",
+      "descriptionKey": "Challenge.topic08-req04-shortest-path.Description",
+      "translations": {
+        "vi": {
+          "Challenge.topic08-req04-shortest-path.Title": "Tìm đường đi ngắn nhất",
+          "Challenge.topic08-req04-shortest-path.Description": "Có nhiều con đường để đến đích, nhưng chỉ có một con đường là tối ưu nhất. Hãy viết một thuật toán để tìm ra nó."
+        }
+      },
+      "generation_config": {
+        "map_type": "complex_maze_2d",
+        "logic_type": "algorithm_design",
+        "num_variants": 1,
+        "params": {
+          "maze_width": 13,
+          "maze_depth": 13,
+          "density": "0.6",
+          "start_blocks_type": "empty"
+        }
+      },
+      "blockly_config": {
+        "toolbox_preset": "full_toolbox_no_jump"
+      },
+      "solution_config": {
+        "type": "reach_target",
+        "itemGoals": {}
+      }
+    },
+    {
+      "id": "topic08-req05-traveling-salesman",
+      "level": 5,
+      "titleKey": "Challenge.topic08-req05-traveling-salesman.Title",
+      "descriptionKey": "Challenge.topic08-req05-traveling-salesman.Description",
+      "translations": {
+        "vi": {
+          "Challenge.topic08-req05-traveling-salesman.Title": "Người giao hàng",
+          "Challenge.topic08-req05-traveling-salesman.Description": "Một thử thách thực sự! Hãy thu thập tất cả các loại kho báu khác nhau trước khi đến đích. Thứ tự thu thập là tùy bạn chọn!"
+        }
+      },
+      "generation_config": {
+        "map_type": "complex_maze_2d",
+        "logic_type": "algorithm_design",
+        "num_variants": 1,
+        "params": {
+          "maze_width": 13,
+          "maze_depth": 13,
+          "items_to_place": [
+            "crystal",
+            "gem"
+          ],
+          "start_blocks_type": "empty"
+        }
+      },
+      "blockly_config": {
+        "toolbox_preset": "full_toolbox_no_jump"
+      },
+      "solution_config": {
+        "type": "reach_target",
+        "itemGoals": {
+          "crystal": 1,
+          "gem": 1
+        }
+      }
+    }
+  ]
+}

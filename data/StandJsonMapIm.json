@@ -1,0 +1,181 @@
+{
+  "id": "topic3-challengeC3_L2_T2_0fba57",
+  "gameType": "maze",
+  "level": 2,
+  "titleKey": "Challenge.T3.CC3.L2.T2.Title",
+  "descriptionKey": "Challenge.T3.CC3.L2.T2.Description",
+  "translations": {
+    "en": {
+      "Challenge.T3.CC3.L2.T2.Title": "Refactoring with Loops",
+      "Challenge.T3.CC3.L2.T2.Description": "Description: This program already has a `solveOneSide` function and 4 function calls. Optimize it using a `repeat` loop.\\nGoal: Teach the skill of refactoring repetitive code."
+    },
+    "vi": {
+      "Challenge.T3.CC3.L2.T2.Title": "Tái cấu trúc bằng Vòng lặp",
+      "Challenge.T3.CC3.L2.T2.Description": "Mô tả: Chương trình này đã có sẵn hàm `solveOneSide` và 4 lời gọi hàm. Hãy tối ưu nó bằng vòng lặp `repeat`.\\nMục tiêu: Dạy kỹ năng tái cấu trúc code lặp lại."
+    }
+  },
+  "supportedEditors": [
+    "blockly",
+    "monaco"
+  ],
+  "blocklyConfig": {
+    "toolbox": {
+      "kind": "categoryToolbox",
+      "contents": [
+        {
+          "kind": "category",
+          "name": "Events",
+          "categorystyle": "procedure_category",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "maze_start"
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "Movement",
+          "categorystyle": "turtle_category",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "maze_moveForward"
+            },
+            {
+              "kind": "block",
+              "type": "maze_jump"
+            },
+            {
+              "kind": "block",
+              "type": "maze_turn"
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "Actions",
+          "categorystyle": "pond_category",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "maze_collect"
+            },
+            {
+              "kind": "block",
+              "type": "maze_toggle_switch"
+            }
+          ]
+        },
+        {
+          "kind": "sep"
+        },
+        {
+          "kind": "category",
+          "name": "%{BKY_GAMES_CATPROCEDURES}",
+          "custom": "PROCEDURE",
+          "categorystyle": "procedure_category"
+        },
+        {
+          "kind": "category",
+          "name": "Loops",
+          "categorystyle": "loops_category",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "maze_repeat",
+              "inputs": {
+                "TIMES": {
+                  "shadow": {
+                    "type": "math_number",
+                    "fields": {
+                      "NUM": 5
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "maxBlocks": 8,
+    "startBlocks": ""
+  },
+  "gameConfig": {
+    "type": "maze",
+    "renderer": "3d",
+    "blocks": [
+      {
+        "modelKey": "ground.normal",
+        "position": {
+          "x": 1,
+          "y": 0,
+          "z": 2
+        }
+      },
+      {
+        "modelKey": "ground.normal",
+        "position": {
+          "x": 2,
+          "y": 0,
+          "z": 2
+        }
+      },
+      {
+        "modelKey": "ground.normal",
+        "position": {
+          "x": 3,
+          "y": 0,
+          "z": 2
+        }
+      }
+    ],
+    "players": [
+      {
+        "id": "player1",
+        "start": {
+          "x": 1,
+          "y": 1,
+          "z": 2,
+          "direction": 1
+        }
+      }
+    ],
+    "collectibles": [
+      {
+        "id": "c1",
+        "type": "crystal",
+        "position": {
+          "x": 2,
+          "y": 1,
+          "z": 2
+        }
+      }
+    ],
+    "interactibles": [],
+    "obstacles": [],
+    "finish": {
+      "x": 3,
+      "y": 1,
+      "z": 2
+    }
+  },
+  "solution": {
+    "type": "reach_target",
+    "itemGoals": {
+      "crystal": 1
+    },
+    "optimalBlocks": 4,
+    "rawActions": [
+      "moveForward",
+      "collect",
+      "moveForward"
+    ],
+    "structuredSolution": "MAIN PROGRAM:\n  On start:\n    moveForward\n    collect\n    moveForward"
+  },
+  "sounds": {
+    "win": "/assets/maze/win.mp3",
+    "fail": "/assets/maze/fail_pegman.mp3"
+  }
+}

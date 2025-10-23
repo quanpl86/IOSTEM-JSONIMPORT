@@ -1,0 +1,216 @@
+[
+  {
+    "id": "5b04604b-23ab-4151-917b-f8cf96136253",
+    "code": "MULTIPLE_CHOICE-0E6D24D7",
+    "text": "Bạn An cân một cốc nước. Bạn đặt cốc rỗng lên cân thấy chỉ 50g. Sau khi cho nước vào, cân chỉ 220g. Tuy nhiên, An quên không chỉnh kim về vạch 0 ban đầu, lúc đó kim đã chỉ vạch 2g. Khối lượng thật của nước trong cốc là bao nhiêu?",
+    "last_modified": "2025-09-29 02:28:47.430164+00",
+    "question_type_code": "MULTIPLE_CHOICE",
+    "question_config": {
+  "id": "topic1-challengeC1_L2_T2_e01b07",
+  "gameType": "maze",
+  "level": 2,
+  "titleKey": "Challenge.T1.CC1.L2.T2.Title",
+  "descriptionKey": "Challenge.T1.CC1.L2.T2.Description",
+  "translations": {
+    "en": {
+      "name": "Jump and Toggle",
+      "description": "Description: Cross the gap and toggle the switch.\\nGoal: Combine move, jump, and toggle commands."
+    }
+  },
+  "supportedEditors": [
+    "blockly",
+    "monaco"
+  ],
+  "blocklyConfig": {
+    "toolbox": {
+      "kind": "categoryToolbox",
+      "contents": [
+        {
+          "kind": "category",
+          "name": "Events",
+          "categorystyle": "procedure_category",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "maze_start"
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "Movement",
+          "categorystyle": "turtle_category",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "maze_moveForward"
+            },
+            {
+              "kind": "block",
+              "type": "maze_jump"
+            },
+            {
+              "kind": "block",
+              "type": "maze_turn"
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "Actions",
+          "categorystyle": "pond_category",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "maze_collect"
+            },
+            {
+              "kind": "block",
+              "type": "maze_toggle_switch"
+            }
+          ]
+        }
+      ]
+    },
+    "maxBlocks": 9,
+    "startBlocks": ""
+  },
+  "gameConfig": {
+    "type": "maze",
+    "renderer": "3d",
+    "blocks": [
+      {
+        "modelKey": "ground.normal",
+        "position": {
+          "x": 2,
+          "y": 0,
+          "z": 0
+        }
+      },
+      {
+        "modelKey": "ground.normal",
+        "position": {
+          "x": 3,
+          "y": 0,
+          "z": 0
+        }
+      },
+      {
+        "modelKey": "ground.normal",
+        "position": {
+          "x": 4,
+          "y": 0,
+          "z": 0
+        }
+      },
+      {
+        "modelKey": "ground.normal",
+        "position": {
+          "x": 5,
+          "y": 0,
+          "z": 0
+        }
+      },
+      {
+        "modelKey": "ground.normal",
+        "position": {
+          "x": 6,
+          "y": 0,
+          "z": 0
+        }
+      },
+      {
+        "modelKey": "wall.brick01",
+        "position": {
+          "x": 4,
+          "y": 1,
+          "z": 0
+        }
+      }
+    ],
+    "players": [
+      {
+        "id": "player1",
+        "start": {
+          "x": 2,
+          "y": 1,
+          "z": 0,
+          "direction": 1
+        }
+      }
+    ],
+    "collectibles": [],
+    "interactibles": [
+      {
+        "id": "s1",
+        "type": "switch",
+        "position": {
+          "x": 3,
+          "y": 1,
+          "z": 0
+        },
+        "initialState": "off"
+      }
+    ],
+    "obstacles": [
+      {
+        "id": "o1",
+        "type": "wall",
+        "position": {
+          "x": 4,
+          "y": 1,
+          "z": 0
+        }
+      }
+    ],
+    "finish": {
+      "x": 6,
+      "y": 1,
+      "z": 0
+    }
+  },
+  "solution": {
+    "type": "reach_target",
+    "itemGoals": {
+      "obstacle": 1,
+      "switch": 1
+    },
+    "optimalBlocks": 5,
+    "rawActions": [
+      "moveForward",
+      "toggleSwitch",
+      "jump",
+      "moveForward"
+    ],
+    "structuredSolution": "MAIN PROGRAM:\n  On start:\n    moveForward\n    toggleSwitch\n    jump\n    moveForward"
+  },
+  "sounds": {
+    "win": "/assets/maze/win.mp3",
+    "fail": "/assets/maze/fail_pegman.mp3"
+  }
+},
+    "difficulty_code": "HARD",
+    "organization_code": "DEFAULT_ORG",
+    "subject_codes": [
+      "NS_G6"
+    ],
+    "category_codes": [
+      "NS_G6_MEASURE"
+    ],
+    "topic_codes": [
+      "NS_G6_MEASURE_MASS"
+    ],
+    "bloom_level_codes": [
+      null
+    ],
+    "course_codes": [
+      "NS"
+    ],
+    "context_codes": [],
+    "knowledge_dimension_codes": [],
+    "learning_objective_codes": [
+      "NS_G6_MEASURE_MASS_04"
+    ],
+    "grade_level_codes": []
+  }
+]

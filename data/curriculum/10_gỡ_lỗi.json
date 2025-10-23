@@ -1,0 +1,141 @@
+{
+  "topic_code": "TOPIC_10_DEBUGGING",
+  "topic_name": "Gỡ lỗi",
+  "suggested_maps": [
+    {
+      "id": "topic10-req01-debug-param",
+      "level": 1,
+      "titleKey": "Challenge.topic10-req01-debug-param.Title",
+      "descriptionKey": "Challenge.topic10-req01-debug-param.Description",
+      "translations": {
+        "vi": {
+          "Challenge.topic10-req01-debug-param.Title": "Sửa lỗi: Sai số lần lặp",
+          "Challenge.topic10-req01-debug-param.Description": "Chương trình này gần đúng rồi, nhưng có vẻ nó lặp lại sai số lần. Hãy tìm và sửa lại con số đó!"
+        }
+      },
+      "generation_config": {
+        "map_type": "square_shape",
+        "logic_type": "for_loop_simple",
+        "num_variants": 2,
+        "params": {
+          "side_length": 5,
+          "start_blocks_type": "buggy_solution",
+          "bug_type": "incorrect_loop_count",
+          "bug_config": {
+            "target": "loop",
+            "options": { "change_by": -1 }
+          }
+        }
+      },
+      "blockly_config": {
+        "toolbox_preset": "loops_basic"
+      },
+      "solution_config": {
+        "type": "reach_target",
+        "itemGoals": {}
+      }
+    },
+    {
+      "id": "topic10-req02-debug-param",
+      "level": 2,
+      "titleKey": "Challenge.topic10-req02-debug-param.Title",
+      "descriptionKey": "Challenge.topic10-req02-debug-param.Description",
+      "translations": {
+        "vi": {
+          "Challenge.topic10-req02-debug-param.Title": "Sửa lỗi: Rẽ sai hướng",
+          "Challenge.topic10-req02-debug-param.Description": "Nhân vật đang đi sai đường! Có vẻ như một lệnh rẽ đã bị nhầm. Bạn có thể sửa nó không?"
+        }
+      },
+      "generation_config": {
+        "map_type": "simple_path",
+        "logic_type": "sequencing",
+        "num_variants": 2,
+        "params": {
+          "pattern": "corner",
+          "start_blocks_type": "buggy_solution",
+          "bug_type": "incorrect_parameter",
+          "bug_config": {
+            "target": "main"
+          }
+        }
+      },
+      "blockly_config": {
+        "toolbox_preset": "movement_only"
+      },
+      "solution_config": {
+        "type": "reach_target",
+        "itemGoals": {}
+      }
+    },
+    {
+      "id": "topic10-req03-debug-order",
+      "level": 3,
+      "titleKey": "Challenge.topic10-req03-debug-order.Title",
+      "descriptionKey": "Challenge.topic10-req03-debug-order.Description",
+      "translations": {
+        "vi": {
+          "Challenge.topic10-req03-debug-order.Title": "Sửa lỗi: Sai thứ tự",
+          "Challenge.topic10-req03-debug-order.Description": "Các lệnh đều đúng, nhưng chúng đang ở sai vị trí. Hãy sắp xếp lại chúng để chương trình chạy đúng!"
+        }
+      },
+      "generation_config": {
+        "map_type": "simple_path",
+        "logic_type": "sequencing",
+        "num_variants": 2,
+        "params": {
+          "path_length": 4,
+          "items_to_place": "crystal",
+          "start_blocks_type": "buggy_solution",
+          "bug_type": "sequence_error",
+          "bug_config": {
+            "target": "main"
+          }
+        }
+      },
+      "blockly_config": {
+        "toolbox_preset": "movement_actions"
+      },
+      "solution_config": {
+        "type": "reach_target",
+        "itemGoals": {
+          "crystal": 1
+        }
+      }
+    },
+    {
+      "id": "topic10-req04-debug-missing",
+      "level": 4,
+      "titleKey": "Challenge.topic10-req04-debug-missing.Title",
+      "descriptionKey": "Challenge.topic10-req04-debug-missing.Description",
+      "translations": {
+        "vi": {
+          "Challenge.topic10-req04-debug-missing.Title": "Sửa lỗi: Thiếu lệnh",
+          "Challenge.topic10-req04-debug-missing.Description": "Chương trình này bỏ lỡ một việc quan trọng. Hãy tìm xem lệnh nào còn thiếu và bổ sung nó vào."
+        }
+      },
+      "generation_config": {
+        "map_type": "simple_path",
+        "logic_type": "sequencing",
+        "num_variants": 2,
+        "params": {
+          "path_length": 5,
+          "items_to_place": "crystal",
+          "start_blocks_type": "buggy_solution",
+          "bug_type": "missing_block",
+          "bug_config": {
+            "target": "main"
+          }
+        }
+      },
+      "blockly_config": {
+        "toolbox_preset": "movement_actions"
+      },
+      "solution_config": {
+        "type": "reach_target",
+        "itemGoals": {
+          "crystal": 1
+        }
+      }
+    }
+  ]
+}

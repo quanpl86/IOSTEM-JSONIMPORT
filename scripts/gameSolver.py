@@ -399,7 +399,10 @@ def compress_actions_to_structure(actions: List[str], available_blocks: Set[str]
             if action_str.startswith("CALL:"):
                 structured_code.append({"type": "CALL", "name": action_str.split(":", 1)[1]})
             else:
+                # [CẢI TIẾN] Lưu trữ hướng rẽ trực tiếp trong cấu trúc
                 if action_str == "turnLeft" or action_str == "turnRight":
+                    # Thay vì một loại 'maze_turn' chung, hãy giữ lại hành động cụ thể
+                    # hoặc thêm một trường 'direction' vào một loại chung.
                     structured_code.append({"type": "maze_turn", "direction": action_str})
                 else:
                     structured_code.append({"type": action_str})

@@ -19,12 +19,142 @@ if SRC_PATH not in sys.path:
 from map_generator.service import MapGeneratorService
 from scripts.gameSolver import solve_map_and_get_solution
 from bug_generator.service import create_bug # [THAY ĐỔI] Import hàm điều phối mới
-# --- [MỚI] Tích hợp tính năng tính toán số dòng code ---
-# Import các hàm cần thiết trực tiếp từ calculate_lines.py
-from scripts.calculate_lines import calculate_logical_lines_py, translate_structured_solution_to_js
-# ---------------------------------------------------------
 import re
 import xml.etree.ElementTree as ET
+
+# --- [MỚI] SECTION: TÍNH TOÁN SỐ DÒNG CODE TỐI ƯU (OPTIMAL LINES OF CODE) ---
+
+def calculate_logical_lines_py(code: str) -> int:
+    """
+    Tính toán số dòng code logic (LLOC) từ một chuỗi code JavaScript.
+    Hàm này loại bỏ comment, dòng trống, và chuẩn hóa code trước khi đếm.
+    """
+    if not code:
+        return 0
+    # Loại bỏ comment block (/*...*/) và comment inline (//...)
+    code = re.sub(r'/\*[\s\S]*?\*/|//.*', '', code)
+
+    # [SỬA LỖI] Thuật toán mới mô phỏng chính xác logic của regex gốc mà không gây lỗi.
+    # 1. Chuẩn hóa cơ bản
+    code = re.sub(r'\s+', ' ', code).strip()
+    code = code.replace(';', ';\n')
+
+    # 2. Xử lý dấu ngoặc nhọn một cách thông minh
+    # Các từ khóa mà dấu `{` có thể đi liền sau mà không cần xuống dòng
+    control_keywords = re.compile(r'\b(for|while|if|else if|function|switch|catch|try|finally|class)\s*\([^)]*\)$|\b(else|do)$')
+    
+    # Tách code dựa trên dấu ngoặc nhọn
+    parts = code.replace('{', '\n{\n').replace('}', '\n}\n').split('\n')
+    
+    # 3. Ghép lại các dòng bị tách sai
+    reformatted_lines = []
+    temp_line = ""
+    for part in parts:
+        part = part.strip()
+        if not part:
+            continue
+        
+        # Nếu phần hiện tại là `{` và dòng tạm trước đó là một cấu trúc điều khiển,
+        # thì ghép `{` vào dòng đó.
+        if part == '{' and temp_line and control_keywords.search(temp_line):
+            temp_line += ' {'
+        else:
+            # Nếu dòng tạm có nội dung, thêm nó vào kết quả trước khi bắt đầu dòng mới.
+            if temp_line:
+                reformatted_lines.append(temp_line)
+            temp_line = part
+    
+    # Thêm dòng tạm cuối cùng nếu có
+    if temp_line:
+        reformatted_lines.append(temp_line)
+
+    # 4. Đếm các dòng logic cuối cùng
+    logical_lines = 0
+    for line in reformatted_lines:
+        # Bỏ qua các dòng chỉ chứa dấu ngoặc nhọn
+        if line not in ['{', '}']:
+            logical_lines += 1
+            
+    return logical_lines
+
+def translate_structured_solution_to_js(structured_solution: list, raw_actions: list) -> str:
+    """
+    Chuyển đổi `structuredSolution` (từ gameSolver) thành code JavaScript.
+    Sử dụng `rawActions` để suy luận hướng rẽ cho `maze_turn`.
+    """
+    js_code_lines = []
+    indent_str = '  '
+    procedure_map = {}
+
+    # Tìm các lệnh rẽ trong raw_actions để ánh xạ cho maze_turn
+    turn_actions_from_raw = [action for action in raw_actions if action in ['turnLeft', 'turnRight']]
+    maze_turn_idx = 0
+
+    # Hàm đệ quy để xử lý một khối các dòng lệnh
+    def process_lines_recursively(lines: list, current_indent: int, loop_var_stack: list) -> list:
+        nonlocal maze_turn_idx
+        result_js = []
+        i = 0
+        while i < len(lines):
+            line = lines[i].strip()
+            if not line or line in ['On start:', 'MAIN PROGRAM:', 'DEFINE', 'CALL']:
+                i += 1
+                continue
+
+            if line.startswith('DEFINE PROCEDURE_'):
+                proc_key = line.split(' ')[1][:-1]
+                proc_name = f"procedure{len(procedure_map) + 1}"
+                procedure_map[proc_key] = proc_name
+                result_js.append(f"{indent_str * current_indent}function {proc_name}() {{")
+                # Tìm body của procedure
+                proc_body_lines = []
+                i += 1
+                while i < len(lines) and not lines[i].strip().startswith('MAIN PROGRAM:') and not lines[i].strip().startswith('DEFINE'):
+                    proc_body_lines.append(lines[i])
+                    i += 1
+                result_js.extend(process_lines_recursively(proc_body_lines, current_indent + 1, []))
+                result_js.append(f"{indent_str * current_indent}}}")
+                continue # Đã xử lý xong procedure, tiếp tục vòng lặp ngoài
+
+            elif line.startswith('repeat'):
+                match = re.match(r'repeat \((\d+)\) do:', line)
+                if match:
+                    count = match.group(1)
+                    loop_var = 'i' * (len(loop_var_stack) + 1)
+                    loop_var_stack.append(loop_var)
+                    result_js.append(f"{indent_str * current_indent}for (let {loop_var} = 0; {loop_var} < {count}; {loop_var}++) {{")
+                    # Tìm body của vòng lặp
+                    loop_body_lines = []
+                    i += 1
+                    initial_indent = len(lines[i]) - len(lines[i].lstrip(' ')) if i < len(lines) else 0
+                    while i < len(lines) and (len(lines[i]) - len(lines[i].lstrip(' ')) >= initial_indent or not lines[i].strip()):
+                        loop_body_lines.append(lines[i])
+                        i += 1
+                    result_js.extend(process_lines_recursively(loop_body_lines, current_indent + 1, loop_var_stack))
+                    result_js.append(f"{indent_str * current_indent}}}")
+                    loop_var_stack.pop()
+                    continue # Đã xử lý xong vòng lặp, tiếp tục vòng lặp ngoài
+
+            elif line.startswith('CALL PROCEDURE_'):
+                proc_key = line.split(' ')[1]
+                result_js.append(f"{indent_str * current_indent}{procedure_map.get(proc_key, 'unknown_proc')}();")
+            elif line == 'moveForward':
+                result_js.append(f"{indent_str * current_indent}moveForward();")
+            elif line == 'collect':
+                result_js.append(f"{indent_str * current_indent}collectItem();")
+            elif line == 'maze_turn':
+                turn_action = turn_actions_from_raw[maze_turn_idx] if maze_turn_idx < len(turn_actions_from_raw) else 'turnRight'
+                result_js.append(f"{indent_str * current_indent}{turn_action}();")
+                maze_turn_idx += 1
+            elif line == 'turnRight':
+                 result_js.append(f"{indent_str * current_indent}turnRight();")
+            elif line == 'turnLeft':
+                 result_js.append(f"{indent_str * current_indent}turnLeft();")
+            i += 1
+        return result_js
+
+    # Bắt đầu quá trình chuyển đổi đệ quy
+    return "\n".join(process_lines_recursively(structured_solution, 0, []))
 
 def actions_to_xml(actions: list) -> str:
     """Chuyển đổi danh sách hành động thành chuỗi XML lồng nhau cho Blockly."""
@@ -367,16 +497,17 @@ def main():
                     # --- [MỚI] Bước 6.5: Tính toán Optimal Lines of Code cho JavaScript ---
                     optimal_lloc = 0
                     if solution_result and solution_result.get('structuredSolution'):
-                        try:
-                            # Chuyển đổi lời giải có cấu trúc sang JS và tính LLOC
-                            js_structured = translate_structured_solution_to_js(
-                                solution_result['structuredSolution'], 
-                                solution_result.get('raw_actions', [])
-                            )
-                            optimal_lloc = calculate_logical_lines_py(js_structured)
-                        except Exception as e:
-                            print(f"   - ⚠️ Cảnh báo: Lỗi khi tính toán optimalLinesOfCode: {e}")
-                            optimal_lloc = 0 # Gán giá trị mặc định nếu có lỗi
+                        # Chuyển đổi lời giải có cấu trúc sang JS và tính LLOC
+                        js_structured = translate_structured_solution_to_js(
+                            solution_result['structuredSolution'], 
+                            solution_result['raw_actions']
+                        )
+                        lloc_structured = calculate_logical_lines_py(js_structured)
+                        
+                        # Luôn gán giá trị LLOC của lời giải đã tối ưu
+                        # (Trong tương lai có thể so sánh với LLOC của raw_actions để chọn giá trị nhỏ hơn)
+                        optimal_lloc = lloc_structured
+
 
                     # --- Logic mới để sinh startBlocks động cho các thử thách FixBug ---
                     final_inner_blocks = ''
@@ -488,7 +619,7 @@ def main():
                             "type": map_request.get('solution_config', {}).get('type', 'reach_target'),
                             "itemGoals": map_request.get('solution_config', {}).get('itemGoals', {}),
                             "optimalBlocks": solution_result['block_count'] if solution_result else 0,
-                            "optimalLinesOfCode": optimal_lloc,
+                            "optimalLinesOfCode": optimal_lloc, # [SỬA] Đổi tên cho nhất quán
                             "rawActions": solution_result['raw_actions'] if solution_result else [],
                             "structuredSolution": solution_result['structuredSolution'] if solution_result else []
                         },

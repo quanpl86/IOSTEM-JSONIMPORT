@@ -488,7 +488,7 @@ def main():
                             "type": map_request.get('solution_config', {}).get('type', 'reach_target'),
                             "itemGoals": map_request.get('solution_config', {}).get('itemGoals', {}),
                             "optimalBlocks": solution_result['block_count'] if solution_result else 0,
-                            "optimalLinesOfCode": optimal_lloc,
+                            "optimalLines": optimal_lloc,
                             "rawActions": solution_result['raw_actions'] if solution_result else [],
                             "structuredSolution": solution_result['structuredSolution'] if solution_result else []
                         },

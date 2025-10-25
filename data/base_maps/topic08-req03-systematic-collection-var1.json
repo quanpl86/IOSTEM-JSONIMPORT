@@ -1072,15 +1072,7 @@
         "position": {
           "x": 1,
           "y": 1,
-          "z": 4
-        }
-      },
-      {
-        "modelKey": "wall.stone01",
-        "position": {
-          "x": 1,
-          "y": 1,
-          "z": 8
+          "z": 6
         }
       },
       {
@@ -1128,7 +1120,7 @@
         "position": {
           "x": 2,
           "y": 1,
-          "z": 6
+          "z": 5
         }
       },
       {
@@ -1136,7 +1128,7 @@
         "position": {
           "x": 2,
           "y": 1,
-          "z": 7
+          "z": 6
         }
       },
       {
@@ -1184,6 +1176,14 @@
         "position": {
           "x": 3,
           "y": 1,
+          "z": 8
+        }
+      },
+      {
+        "modelKey": "wall.stone01",
+        "position": {
+          "x": 3,
+          "y": 1,
           "z": 10
         }
       },
@@ -1201,6 +1201,14 @@
           "x": 4,
           "y": 1,
           "z": 2
+        }
+      },
+      {
+        "modelKey": "wall.stone01",
+        "position": {
+          "x": 4,
+          "y": 1,
+          "z": 3
         }
       },
       {
@@ -1216,23 +1224,7 @@
         "position": {
           "x": 4,
           "y": 1,
-          "z": 5
-        }
-      },
-      {
-        "modelKey": "wall.stone01",
-        "position": {
-          "x": 4,
-          "y": 1,
           "z": 6
-        }
-      },
-      {
-        "modelKey": "wall.stone01",
-        "position": {
-          "x": 4,
-          "y": 1,
-          "z": 7
         }
       },
       {
@@ -1264,7 +1256,7 @@
         "position": {
           "x": 5,
           "y": 1,
-          "z": 2
+          "z": 4
         }
       },
       {
@@ -1336,6 +1328,14 @@
         "position": {
           "x": 6,
           "y": 1,
+          "z": 7
+        }
+      },
+      {
+        "modelKey": "wall.stone01",
+        "position": {
+          "x": 6,
+          "y": 1,
           "z": 8
         }
       },
@@ -1353,14 +1353,6 @@
           "x": 7,
           "y": 1,
           "z": 0
-        }
-      },
-      {
-        "modelKey": "wall.stone01",
-        "position": {
-          "x": 7,
-          "y": 1,
-          "z": 6
         }
       },
       {
@@ -1417,6 +1409,14 @@
           "x": 8,
           "y": 1,
           "z": 6
+        }
+      },
+      {
+        "modelKey": "wall.stone01",
+        "position": {
+          "x": 8,
+          "y": 1,
+          "z": 7
         }
       },
       {
@@ -1564,7 +1564,7 @@
         "id": "c1",
         "type": "crystal",
         "position": {
-          "x": 1,
+          "x": 3,
           "y": 1,
           "z": 3
         }
@@ -1573,18 +1573,18 @@
         "id": "c2",
         "type": "crystal",
         "position": {
-          "x": 9,
+          "x": 1,
           "y": 1,
-          "z": 1
+          "z": 5
         }
       },
       {
         "id": "c3",
         "type": "crystal",
         "position": {
-          "x": 1,
+          "x": 5,
           "y": 1,
-          "z": 9
+          "z": 3
         }
       }
     ],

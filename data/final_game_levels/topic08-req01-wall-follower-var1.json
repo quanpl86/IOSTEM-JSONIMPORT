@@ -186,7 +186,7 @@
         }
       ]
     },
-    "maxBlocks": 15,
+    "maxBlocks": 14,
     "startBlocks": "<xml><block type=\"maze_start\" deletable=\"false\" movable=\"false\"><statement name=\"DO\"></statement></block></xml>"
   },
   "gameConfig": {
@@ -252,6 +252,22 @@
       {
         "modelKey": "ground.normal",
         "position": {
+          "x": 0,
+          "y": 0,
+          "z": 7
+        }
+      },
+      {
+        "modelKey": "ground.normal",
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 8
+        }
+      },
+      {
+        "modelKey": "ground.normal",
+        "position": {
           "x": 1,
           "y": 0,
           "z": 0
@@ -308,6 +324,22 @@
       {
         "modelKey": "ground.normal",
         "position": {
+          "x": 1,
+          "y": 0,
+          "z": 7
+        }
+      },
+      {
+        "modelKey": "ground.normal",
+        "position": {
+          "x": 1,
+          "y": 0,
+          "z": 8
+        }
+      },
+      {
+        "modelKey": "ground.normal",
+        "position": {
           "x": 2,
           "y": 0,
           "z": 0
@@ -364,6 +396,22 @@
       {
         "modelKey": "ground.normal",
         "position": {
+          "x": 2,
+          "y": 0,
+          "z": 7
+        }
+      },
+      {
+        "modelKey": "ground.normal",
+        "position": {
+          "x": 2,
+          "y": 0,
+          "z": 8
+        }
+      },
+      {
+        "modelKey": "ground.normal",
+        "position": {
           "x": 3,
           "y": 0,
           "z": 0
@@ -420,6 +468,22 @@
       {
         "modelKey": "ground.normal",
         "position": {
+          "x": 3,
+          "y": 0,
+          "z": 7
+        }
+      },
+      {
+        "modelKey": "ground.normal",
+        "position": {
+          "x": 3,
+          "y": 0,
+          "z": 8
+        }
+      },
+      {
+        "modelKey": "ground.normal",
+        "position": {
           "x": 4,
           "y": 0,
           "z": 0
@@ -476,6 +540,22 @@
       {
         "modelKey": "ground.normal",
         "position": {
+          "x": 4,
+          "y": 0,
+          "z": 7
+        }
+      },
+      {
+        "modelKey": "ground.normal",
+        "position": {
+          "x": 4,
+          "y": 0,
+          "z": 8
+        }
+      },
+      {
+        "modelKey": "ground.normal",
+        "position": {
           "x": 5,
           "y": 0,
           "z": 0
@@ -532,6 +612,22 @@
       {
         "modelKey": "ground.normal",
         "position": {
+          "x": 5,
+          "y": 0,
+          "z": 7
+        }
+      },
+      {
+        "modelKey": "ground.normal",
+        "position": {
+          "x": 5,
+          "y": 0,
+          "z": 8
+        }
+      },
+      {
+        "modelKey": "ground.normal",
+        "position": {
           "x": 6,
           "y": 0,
           "z": 0
@@ -583,6 +679,22 @@
           "x": 6,
           "y": 0,
           "z": 6
+        }
+      },
+      {
+        "modelKey": "ground.normal",
+        "position": {
+          "x": 6,
+          "y": 0,
+          "z": 7
+        }
+      },
+      {
+        "modelKey": "ground.normal",
+        "position": {
+          "x": 6,
+          "y": 0,
+          "z": 8
         }
       },
       {
@@ -644,6 +756,22 @@
       {
         "modelKey": "wall.stone01",
         "position": {
+          "x": 0,
+          "y": 1,
+          "z": 7
+        }
+      },
+      {
+        "modelKey": "wall.stone01",
+        "position": {
+          "x": 0,
+          "y": 1,
+          "z": 8
+        }
+      },
+      {
+        "modelKey": "wall.stone01",
+        "position": {
           "x": 1,
           "y": 1,
           "z": 0
@@ -654,7 +782,7 @@
         "position": {
           "x": 1,
           "y": 1,
-          "z": 6
+          "z": 8
         }
       },
       {
@@ -708,6 +836,22 @@
       {
         "modelKey": "wall.stone01",
         "position": {
+          "x": 2,
+          "y": 1,
+          "z": 7
+        }
+      },
+      {
+        "modelKey": "wall.stone01",
+        "position": {
+          "x": 2,
+          "y": 1,
+          "z": 8
+        }
+      },
+      {
+        "modelKey": "wall.stone01",
+        "position": {
           "x": 3,
           "y": 1,
           "z": 0
@@ -718,7 +862,15 @@
         "position": {
           "x": 3,
           "y": 1,
-          "z": 6
+          "z": 2
+        }
+      },
+      {
+        "modelKey": "wall.stone01",
+        "position": {
+          "x": 3,
+          "y": 1,
+          "z": 8
         }
       },
       {
@@ -758,7 +910,23 @@
         "position": {
           "x": 4,
           "y": 1,
+          "z": 5
+        }
+      },
+      {
+        "modelKey": "wall.stone01",
+        "position": {
+          "x": 4,
+          "y": 1,
           "z": 6
+        }
+      },
+      {
+        "modelKey": "wall.stone01",
+        "position": {
+          "x": 4,
+          "y": 1,
+          "z": 8
         }
       },
       {
@@ -774,15 +942,7 @@
         "position": {
           "x": 5,
           "y": 1,
-          "z": 2
-        }
-      },
-      {
-        "modelKey": "wall.stone01",
-        "position": {
-          "x": 5,
-          "y": 1,
-          "z": 6
+          "z": 8
         }
       },
       {
@@ -839,6 +999,22 @@
           "x": 6,
           "y": 1,
           "z": 6
+        }
+      },
+      {
+        "modelKey": "wall.stone01",
+        "position": {
+          "x": 6,
+          "y": 1,
+          "z": 7
+        }
+      },
+      {
+        "modelKey": "wall.stone01",
+        "position": {
+          "x": 6,
+          "y": 1,
+          "z": 8
         }
       }
     ],
@@ -858,15 +1034,17 @@
     "finish": {
       "x": 5,
       "y": 1,
-      "z": 5
+      "z": 7
     }
   },
   "solution": {
     "type": "reach_target",
     "itemGoals": {},
-    "optimalBlocks": 10,
-    "optimalLinesOfCode": 9,
+    "optimalBlocks": 9,
+    "optimalLines": 8,
     "rawActions": [
+      "moveForward",
+      "moveForward",
       "moveForward",
       "moveForward",
       "turnRight",
@@ -874,22 +1052,21 @@
       "moveForward",
       "moveForward",
       "moveForward",
-      "turnLeft",
       "moveForward",
       "moveForward"
     ],
     "structuredSolution": [
+      "DEFINE PROCEDURE_1:",
+      "  repeat (3) do:",
+      "    moveForward",
+      "",
       "MAIN PROGRAM:",
       "  On start:",
-      "  moveForward",
+      "  CALL PROCEDURE_1",
       "  moveForward",
       "  maze_turn",
-      "  repeat (2) do:",
-      "    moveForward",
-      "    moveForward",
-      "  maze_turn",
-      "  moveForward",
-      "  moveForward"
+      "  CALL PROCEDURE_1",
+      "  CALL PROCEDURE_1"
     ]
   },
   "sounds": {

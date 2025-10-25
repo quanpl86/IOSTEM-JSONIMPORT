@@ -8,7 +8,7 @@
         "position": {
           "x": 1,
           "y": 0,
-          "z": 8
+          "z": 7
         }
       },
       {
@@ -16,14 +16,6 @@
         "position": {
           "x": 1,
           "y": 0,
-          "z": 9
-        }
-      },
-      {
-        "modelKey": "ground.normal",
-        "position": {
-          "x": 2,
-          "y": 0,
           "z": 8
         }
       },
@@ -32,7 +24,15 @@
         "position": {
           "x": 2,
           "y": 0,
-          "z": 9
+          "z": 7
+        }
+      },
+      {
+        "modelKey": "ground.normal",
+        "position": {
+          "x": 2,
+          "y": 0,
+          "z": 8
         }
       },
       {
@@ -40,7 +40,7 @@
         "position": {
           "x": 3,
           "y": 0,
-          "z": 8
+          "z": 7
         }
       },
       {
@@ -48,7 +48,7 @@
         "position": {
           "x": 4,
           "y": 0,
-          "z": 8
+          "z": 7
         }
       },
       {
@@ -56,7 +56,15 @@
         "position": {
           "x": 5,
           "y": 0,
-          "z": 8
+          "z": 7
+        }
+      },
+      {
+        "modelKey": "ground.normal",
+        "position": {
+          "x": 6,
+          "y": 0,
+          "z": 7
         }
       },
       {
@@ -70,9 +78,9 @@
       {
         "modelKey": "ground.normal",
         "position": {
-          "x": 6,
+          "x": 7,
           "y": 0,
-          "z": 9
+          "z": 7
         }
       },
       {
@@ -81,14 +89,6 @@
           "x": 7,
           "y": 0,
           "z": 8
-        }
-      },
-      {
-        "modelKey": "ground.normal",
-        "position": {
-          "x": 7,
-          "y": 0,
-          "z": 9
         }
       },
       {
@@ -96,7 +96,7 @@
         "position": {
           "x": 8,
           "y": 0,
-          "z": 8
+          "z": 7
         }
       },
       {
@@ -104,7 +104,7 @@
         "position": {
           "x": 9,
           "y": 0,
-          "z": 8
+          "z": 7
         }
       },
       {
@@ -112,7 +112,15 @@
         "position": {
           "x": 10,
           "y": 0,
-          "z": 8
+          "z": 7
+        }
+      },
+      {
+        "modelKey": "ground.normal",
+        "position": {
+          "x": 11,
+          "y": 0,
+          "z": 7
         }
       },
       {
@@ -126,9 +134,9 @@
       {
         "modelKey": "ground.normal",
         "position": {
-          "x": 11,
+          "x": 12,
           "y": 0,
-          "z": 9
+          "z": 7
         }
       },
       {
@@ -137,14 +145,6 @@
           "x": 12,
           "y": 0,
           "z": 8
-        }
-      },
-      {
-        "modelKey": "ground.normal",
-        "position": {
-          "x": 12,
-          "y": 0,
-          "z": 9
         }
       }
     ],
@@ -154,7 +154,7 @@
         "start": {
           "x": 1,
           "y": 1,
-          "z": 8,
+          "z": 7,
           "direction": 1
         }
       }
@@ -164,7 +164,7 @@
     "finish": {
       "x": 11,
       "y": 1,
-      "z": 9
+      "z": 8
     }
   }
 }

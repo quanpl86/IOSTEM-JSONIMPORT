@@ -57,41 +57,41 @@
       {
         "modelKey": "ground.normal",
         "position": {
-          "x": 6,
+          "x": 8,
           "y": 0,
-          "z": 1
+          "z": 6
         }
       },
       {
         "modelKey": "ground.normal",
         "position": {
-          "x": 7,
+          "x": 9,
           "y": 0,
-          "z": 1
+          "z": 6
         }
       },
       {
         "modelKey": "ground.normal",
         "position": {
-          "x": 7,
+          "x": 9,
           "y": 0,
-          "z": 2
+          "z": 7
         }
       },
       {
         "modelKey": "ground.normal",
         "position": {
-          "x": 7,
+          "x": 9,
           "y": 0,
-          "z": 3
+          "z": 8
         }
       },
       {
         "modelKey": "ground.normal",
         "position": {
-          "x": 7,
+          "x": 9,
           "y": 0,
-          "z": 4
+          "z": 9
         }
       }
     ],
@@ -99,9 +99,9 @@
       {
         "id": "player1",
         "start": {
-          "x": 6,
+          "x": 8,
           "y": 1,
-          "z": 1,
+          "z": 6,
           "direction": 1
         }
       }
@@ -111,24 +111,24 @@
         "id": "c1",
         "type": "crystal",
         "position": {
-          "x": 7,
+          "x": 9,
           "y": 1,
-          "z": 2
+          "z": 7
         }
       }
     ],
     "interactibles": [],
     "finish": {
-      "x": 7,
+      "x": 9,
       "y": 1,
-      "z": 4
+      "z": 9
     }
   },
   "solution": {
     "type": "reach_target",
     "itemGoals": {},
     "optimalBlocks": 6,
-    "optimalLinesOfCode": 5,
+    "optimalLines": 5,
     "rawActions": [
       "moveForward",
       "turnRight",

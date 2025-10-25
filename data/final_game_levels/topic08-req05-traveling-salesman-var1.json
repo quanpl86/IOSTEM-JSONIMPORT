@@ -1662,6 +1662,14 @@
         "position": {
           "x": 1,
           "y": 1,
+          "z": 6
+        }
+      },
+      {
+        "modelKey": "wall.stone01",
+        "position": {
+          "x": 1,
+          "y": 1,
           "z": 12
         }
       },
@@ -1718,14 +1726,6 @@
         "position": {
           "x": 2,
           "y": 1,
-          "z": 7
-        }
-      },
-      {
-        "modelKey": "wall.stone01",
-        "position": {
-          "x": 2,
-          "y": 1,
           "z": 8
         }
       },
@@ -1750,14 +1750,6 @@
         "position": {
           "x": 2,
           "y": 1,
-          "z": 11
-        }
-      },
-      {
-        "modelKey": "wall.stone01",
-        "position": {
-          "x": 2,
-          "y": 1,
           "z": 12
         }
       },
@@ -1773,62 +1765,6 @@
         "modelKey": "wall.stone01",
         "position": {
           "x": 3,
-          "y": 1,
-          "z": 4
-        }
-      },
-      {
-        "modelKey": "wall.stone01",
-        "position": {
-          "x": 3,
-          "y": 1,
-          "z": 12
-        }
-      },
-      {
-        "modelKey": "wall.stone01",
-        "position": {
-          "x": 4,
-          "y": 1,
-          "z": 0
-        }
-      },
-      {
-        "modelKey": "wall.stone01",
-        "position": {
-          "x": 4,
-          "y": 1,
-          "z": 2
-        }
-      },
-      {
-        "modelKey": "wall.stone01",
-        "position": {
-          "x": 4,
-          "y": 1,
-          "z": 4
-        }
-      },
-      {
-        "modelKey": "wall.stone01",
-        "position": {
-          "x": 4,
-          "y": 1,
-          "z": 6
-        }
-      },
-      {
-        "modelKey": "wall.stone01",
-        "position": {
-          "x": 4,
-          "y": 1,
-          "z": 7
-        }
-      },
-      {
-        "modelKey": "wall.stone01",
-        "position": {
-          "x": 4,
           "y": 1,
           "z": 8
         }
@@ -1836,23 +1772,7 @@
       {
         "modelKey": "wall.stone01",
         "position": {
-          "x": 4,
-          "y": 1,
-          "z": 9
-        }
-      },
-      {
-        "modelKey": "wall.stone01",
-        "position": {
-          "x": 4,
-          "y": 1,
-          "z": 10
-        }
-      },
-      {
-        "modelKey": "wall.stone01",
-        "position": {
-          "x": 4,
+          "x": 3,
           "y": 1,
           "z": 12
         }
@@ -1860,7 +1780,7 @@
       {
         "modelKey": "wall.stone01",
         "position": {
-          "x": 5,
+          "x": 4,
           "y": 1,
           "z": 0
         }
@@ -1868,7 +1788,7 @@
       {
         "modelKey": "wall.stone01",
         "position": {
-          "x": 5,
+          "x": 4,
           "y": 1,
           "z": 2
         }
@@ -1876,39 +1796,7 @@
       {
         "modelKey": "wall.stone01",
         "position": {
-          "x": 5,
-          "y": 1,
-          "z": 8
-        }
-      },
-      {
-        "modelKey": "wall.stone01",
-        "position": {
-          "x": 5,
-          "y": 1,
-          "z": 12
-        }
-      },
-      {
-        "modelKey": "wall.stone01",
-        "position": {
-          "x": 6,
-          "y": 1,
-          "z": 0
-        }
-      },
-      {
-        "modelKey": "wall.stone01",
-        "position": {
-          "x": 6,
-          "y": 1,
-          "z": 2
-        }
-      },
-      {
-        "modelKey": "wall.stone01",
-        "position": {
-          "x": 6,
+          "x": 4,
           "y": 1,
           "z": 3
         }
@@ -1916,7 +1804,7 @@
       {
         "modelKey": "wall.stone01",
         "position": {
-          "x": 6,
+          "x": 4,
           "y": 1,
           "z": 4
         }
@@ -1924,9 +1812,113 @@
       {
         "modelKey": "wall.stone01",
         "position": {
-          "x": 6,
+          "x": 4,
           "y": 1,
           "z": 5
+        }
+      },
+      {
+        "modelKey": "wall.stone01",
+        "position": {
+          "x": 4,
+          "y": 1,
+          "z": 6
+        }
+      },
+      {
+        "modelKey": "wall.stone01",
+        "position": {
+          "x": 4,
+          "y": 1,
+          "z": 7
+        }
+      },
+      {
+        "modelKey": "wall.stone01",
+        "position": {
+          "x": 4,
+          "y": 1,
+          "z": 8
+        }
+      },
+      {
+        "modelKey": "wall.stone01",
+        "position": {
+          "x": 4,
+          "y": 1,
+          "z": 10
+        }
+      },
+      {
+        "modelKey": "wall.stone01",
+        "position": {
+          "x": 4,
+          "y": 1,
+          "z": 12
+        }
+      },
+      {
+        "modelKey": "wall.stone01",
+        "position": {
+          "x": 5,
+          "y": 1,
+          "z": 0
+        }
+      },
+      {
+        "modelKey": "wall.stone01",
+        "position": {
+          "x": 5,
+          "y": 1,
+          "z": 2
+        }
+      },
+      {
+        "modelKey": "wall.stone01",
+        "position": {
+          "x": 5,
+          "y": 1,
+          "z": 6
+        }
+      },
+      {
+        "modelKey": "wall.stone01",
+        "position": {
+          "x": 5,
+          "y": 1,
+          "z": 10
+        }
+      },
+      {
+        "modelKey": "wall.stone01",
+        "position": {
+          "x": 5,
+          "y": 1,
+          "z": 12
+        }
+      },
+      {
+        "modelKey": "wall.stone01",
+        "position": {
+          "x": 6,
+          "y": 1,
+          "z": 0
+        }
+      },
+      {
+        "modelKey": "wall.stone01",
+        "position": {
+          "x": 6,
+          "y": 1,
+          "z": 2
+        }
+      },
+      {
+        "modelKey": "wall.stone01",
+        "position": {
+          "x": 6,
+          "y": 1,
+          "z": 4
         }
       },
       {
@@ -1942,7 +1934,7 @@
         "position": {
           "x": 6,
           "y": 1,
-          "z": 7
+          "z": 8
         }
       },
       {
@@ -1950,7 +1942,7 @@
         "position": {
           "x": 6,
           "y": 1,
-          "z": 8
+          "z": 9
         }
       },
       {
@@ -1975,6 +1967,14 @@
           "x": 7,
           "y": 1,
           "z": 0
+        }
+      },
+      {
+        "modelKey": "wall.stone01",
+        "position": {
+          "x": 7,
+          "y": 1,
+          "z": 4
         }
       },
       {
@@ -2030,7 +2030,7 @@
         "position": {
           "x": 8,
           "y": 1,
-          "z": 3
+          "z": 4
         }
       },
       {
@@ -2038,7 +2038,7 @@
         "position": {
           "x": 8,
           "y": 1,
-          "z": 4
+          "z": 5
         }
       },
       {
@@ -2054,7 +2054,7 @@
         "position": {
           "x": 8,
           "y": 1,
-          "z": 8
+          "z": 7
         }
       },
       {
@@ -2062,7 +2062,7 @@
         "position": {
           "x": 8,
           "y": 1,
-          "z": 9
+          "z": 8
         }
       },
       {
@@ -2094,6 +2094,14 @@
         "position": {
           "x": 9,
           "y": 1,
+          "z": 2
+        }
+      },
+      {
+        "modelKey": "wall.stone01",
+        "position": {
+          "x": 9,
+          "y": 1,
           "z": 4
         }
       },
@@ -2102,7 +2110,7 @@
         "position": {
           "x": 9,
           "y": 1,
-          "z": 6
+          "z": 8
         }
       },
       {
@@ -2166,14 +2174,6 @@
         "position": {
           "x": 10,
           "y": 1,
-          "z": 7
-        }
-      },
-      {
-        "modelKey": "wall.stone01",
-        "position": {
-          "x": 10,
-          "y": 1,
           "z": 8
         }
       },
@@ -2206,7 +2206,7 @@
         "position": {
           "x": 11,
           "y": 1,
-          "z": 2
+          "z": 6
         }
       },
       {
@@ -2346,9 +2346,9 @@
         "id": "c1",
         "type": "crystal",
         "position": {
-          "x": 5,
+          "x": 9,
           "y": 1,
-          "z": 7
+          "z": 5
         }
       },
       {
@@ -2357,7 +2357,7 @@
         "position": {
           "x": 11,
           "y": 1,
-          "z": 1
+          "z": 5
         }
       }
     ],
@@ -2375,7 +2375,7 @@
       "gem": 1
     },
     "optimalBlocks": 0,
-    "optimalLinesOfCode": 0,
+    "optimalLines": 0,
     "rawActions": [],
     "structuredSolution": []
   },

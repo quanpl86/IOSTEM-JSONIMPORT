@@ -102,6 +102,20 @@ Dự án được thiết kế với cấu trúc module hóa để dễ dàng m�
 4.  Cập nhật logic trong `scripts/generate_all_maps.py` để xử lý `bug_type` mới nếu cần (ví dụ: nếu loại lỗi mới yêu cầu xử lý trên XML thay vì list).
 5.  Sử dụng `bug_type` key mới trong file `curriculum_source.xlsx`.
 
+    **Lưu ý về các loại lỗi mới được đề xuất:**
+    Để hỗ trợ đầy đủ các loại lỗi gỡ lỗi nâng cao, bạn cần mở rộng `src/bug_generator/service.py` để xử lý các `bug_type` sau:
+    - `incorrect_control_structure_position`: Di chuyển một khối điều khiển (ví dụ: vòng lặp, điều kiện) đến vị trí sai.
+    - `incorrect_loop_condition`: Thay đổi điều kiện của vòng lặp `while` (ví dụ: thêm/bỏ `NOT`).
+    - `redundant_blocks`: Thêm các khối lệnh thừa vào chương trình.
+    - `incorrect_logic_in_function`: Thay đổi logic bên trong một hàm (ví dụ: xóa một lệnh rẽ trong hàm `turnAround`).
+    - `missing_block_in_function`: Xóa một khối lệnh cần thiết bên trong một hàm.
+    - `missing_return_statement`: Xóa lệnh `return` trong một hàm có giá trị trả về.
+    - `infinite_recursion`: Xóa điều kiện dừng của một hàm đệ quy.
+    - `incorrect_parameter_handling`: Thay đổi cách một hàm sử dụng tham số của nó.
+    - `missing_function_call`: Xóa một lệnh gọi hàm cần thiết từ chương trình chính.
+    - `optimization_no_function`: Tạo code lặp lại thay vì sử dụng hàm để trừu tượng hóa.
+    - `overly_complex_function`: Kết hợp nhiều hành động vào một hàm duy nhất khi nên chia nhỏ.
+
 ### Thêm một loại Map (Topology) mới
 
 1.  Tạo một file Python mới trong `src/map_generator/topologies/`.

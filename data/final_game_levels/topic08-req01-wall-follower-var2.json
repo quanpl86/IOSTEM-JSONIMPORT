@@ -186,7 +186,7 @@
         }
       ]
     },
-    "maxBlocks": 17,
+    "maxBlocks": 14,
     "startBlocks": "<xml><block type=\"maze_start\" deletable=\"false\" movable=\"false\"><statement name=\"DO\"></statement></block></xml>"
   },
   "gameConfig": {
@@ -686,6 +686,14 @@
         "position": {
           "x": 2,
           "y": 1,
+          "z": 3
+        }
+      },
+      {
+        "modelKey": "wall.stone01",
+        "position": {
+          "x": 2,
+          "y": 1,
           "z": 4
         }
       },
@@ -710,14 +718,6 @@
         "position": {
           "x": 3,
           "y": 1,
-          "z": 4
-        }
-      },
-      {
-        "modelKey": "wall.stone01",
-        "position": {
-          "x": 3,
-          "y": 1,
           "z": 6
         }
       },
@@ -727,14 +727,6 @@
           "x": 4,
           "y": 1,
           "z": 0
-        }
-      },
-      {
-        "modelKey": "wall.stone01",
-        "position": {
-          "x": 4,
-          "y": 1,
-          "z": 1
         }
       },
       {
@@ -759,6 +751,14 @@
           "x": 4,
           "y": 1,
           "z": 4
+        }
+      },
+      {
+        "modelKey": "wall.stone01",
+        "position": {
+          "x": 4,
+          "y": 1,
+          "z": 5
         }
       },
       {
@@ -864,40 +864,29 @@
   "solution": {
     "type": "reach_target",
     "itemGoals": {},
-    "optimalBlocks": 12,
-    "optimalLines": 11,
+    "optimalBlocks": 9,
+    "optimalLines": 6,
     "rawActions": [
       "moveForward",
       "moveForward",
-      "turnRight",
       "moveForward",
       "moveForward",
       "turnRight",
-      "moveForward",
-      "moveForward",
-      "turnLeft",
-      "moveForward",
-      "moveForward",
-      "turnLeft",
       "moveForward",
       "moveForward",
       "moveForward",
       "moveForward"
     ],
     "structuredSolution": [
+      "DEFINE PROCEDURE_1:",
+      "",
       "MAIN PROGRAM:",
       "  On start:",
-      "  repeat (2) do:",
-      "    moveForward",
-      "    moveForward",
-      "    maze_turn",
-      "  repeat (2) do:",
-      "    moveForward",
-      "    moveForward",
-      "    maze_turn",
-      "  repeat (2) do:",
-      "    moveForward",
-      "    moveForward"
+      "  CALL PROCEDURE_1",
+      "  moveForward",
+      "  maze_turn",
+      "  CALL PROCEDURE_1",
+      "  moveForward"
     ]
   },
   "sounds": {

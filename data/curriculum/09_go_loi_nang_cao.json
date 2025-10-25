@@ -1,0 +1,685 @@
+{
+  "topic_code": "TOPIC_09_ADVANCED_DEBUGGING",
+  "topic_name": "Gỡ lỗi Nâng cao",
+  "suggested_maps": [
+
+    {
+      "id": "debug-main-sequence-error",
+      "level": 1,
+      "titleKey": "Challenge.debug-main-sequence-error.Title",
+      "descriptionKey": "Challenge.debug-main-sequence-error.Description",
+      "translations": {
+        "vi": {
+          "Challenge.debug-main-sequence-error.Title": "Sửa lỗi: Sai thứ tự lệnh chính",
+          "Challenge.debug-main-sequence-error.Description": "Nhân vật đang gặp khó khăn khi vượt chướng ngại vật. Có vẻ như các lệnh đã bị sắp xếp sai thứ tự. Hãy sắp xếp lại chúng để nhân vật có thể vượt qua tường và về đích!"
+        }
+      },
+      "generation_config": {
+        "map_type": "simple_path",
+        "logic_type": "sequencing",
+        "num_variants": 1,
+        "params": {
+          "path_length": 3,
+          "obstacles": 1,
+          "items_to_place": [],
+          "start_blocks_type": "buggy_solution",
+          "bug_type": "sequence_error",
+          "bug_config": {
+            "target": "main",
+            "options": { "swap_indices": [0, 1] }
+          }
+        }
+      },
+      "blockly_config": {
+        "toolbox_preset": "movement_jump"
+      },
+      "solution_config": {
+        "type": "reach_target",
+        "itemGoals": {}
+      }
+    },
+    {
+      "id": "debug-main-missing-block",
+      "level": 2,
+      "titleKey": "Challenge.debug-main-missing-block.Title",
+      "descriptionKey": "Challenge.debug-main-missing-block.Description",
+      "translations": {
+        "vi": {
+          "Challenge.debug-main-missing-block.Title": "Sửa lỗi: Thiếu lệnh chính",
+          "Challenge.debug-main-missing-block.Description": "Nhân vật nhảy lên nhưng không thể vượt qua chướng ngại vật. Có vẻ như một lệnh quan trọng đã bị thiếu. Hãy tìm và bổ sung nó để hoàn thành nhiệm vụ!"
+        }
+      },
+      "generation_config": {
+        "map_type": "simple_path",
+        "logic_type": "sequencing",
+        "num_variants": 1,
+        "params": {
+          "path_length": 3,
+          "obstacles": 1,
+          "items_to_place": [],
+          "start_blocks_type": "buggy_solution",
+          "bug_type": "missing_block",
+          "bug_config": {
+            "target": "main",
+            "options": { "block_to_remove": "moveForward", "after_block": "jump" }
+          }
+        }
+      },
+      "blockly_config": {
+        "toolbox_preset": "movement_jump"
+      },
+      "solution_config": {
+        "type": "reach_target",
+        "itemGoals": {}
+      }
+    },
+    {
+      "id": "debug-main-incorrect-control-pos",
+      "level": 3,
+      "titleKey": "Challenge.debug-main-incorrect-control-pos.Title",
+      "descriptionKey": "Challenge.debug-main-incorrect-control-pos.Description",
+      "translations": {
+        "vi": {
+          "Challenge.debug-main-incorrect-control-pos.Title": "Sửa lỗi: Sai vị trí vòng lặp",
+          "Challenge.debug-main-incorrect-control-pos.Description": "Chương trình đang rẽ quá sớm hoặc quá nhiều lần. Vòng lặp hoặc lệnh rẽ đang ở sai vị trí. Hãy đặt nó đúng chỗ để nhân vật đi thẳng rồi mới rẽ!"
+        }
+      },
+      "generation_config": {
+        "map_type": "simple_path",
+        "logic_type": "for_loop_simple",
+        "num_variants": 1,
+        "params": {
+          "path_length": 4,
+          "turns": 1,
+          "start_blocks_type": "buggy_solution",
+          "bug_type": "incorrect_control_structure_position",
+          "bug_config": {
+            "target": "main",
+            "options": { "move_block_type": "maze_turn", "from": "after_loop", "to": "inside_loop" }
+          }
+        }
+      },
+      "blockly_config": {
+        "toolbox_preset": "loops_basic"
+      },
+      "solution_config": {
+        "type": "reach_target",
+        "itemGoals": {}
+      }
+    },
+
+    {
+      "id": "debug-main-incorrect-loop-count",
+      "level": 4,
+      "titleKey": "Challenge.debug-main-incorrect-loop-count.Title",
+      "descriptionKey": "Challenge.debug-main-incorrect-loop-count.Description",
+      "translations": {
+        "vi": {
+          "Challenge.debug-main-incorrect-loop-count.Title": "Sửa lỗi: Sai số lần lặp",
+          "Challenge.debug-main-incorrect-loop-count.Description": "Vòng lặp đang chạy quá nhiều hoặc quá ít lần. Hãy điều chỉnh số lần lặp để nhân vật đi đúng quãng đường!"
+        }
+      },
+      "generation_config": {
+        "map_type": "simple_path",
+        "logic_type": "for_loop_simple",
+        "num_variants": 1,
+        "params": {
+          "path_length": 5,
+          "start_blocks_type": "buggy_solution",
+          "bug_type": "incorrect_loop_count",
+          "bug_config": {
+            "target": "loop",
+            "options": { "change_by": -1 }
+          }
+        }
+      },
+      "blockly_config": {
+        "toolbox_preset": "loops_basic"
+      },
+      "solution_config": {
+        "type": "reach_target",
+        "itemGoals": {}
+      }
+    },
+    {
+      "id": "debug-main-incorrect-loop-condition",
+      "level": 5,
+      "titleKey": "Challenge.debug-main-incorrect-loop-condition.Title",
+      "descriptionKey": "Challenge.debug-main-incorrect-loop-condition.Description",
+      "translations": {
+        "vi": {
+          "Challenge.debug-main-incorrect-loop-condition.Title": "Sửa lỗi: Sai điều kiện dừng",
+          "Challenge.debug-main-incorrect-loop-condition.Description": "Vòng lặp 'while' đang không hoạt động đúng. Điều kiện dừng đã bị thiết lập sai, khiến nhân vật không di chuyển hoặc di chuyển quá xa. Hãy sửa lại điều kiện!"
+        }
+      },
+      "generation_config": {
+        "map_type": "simple_path",
+        "logic_type": "while_loop_simple",
+        "num_variants": 1,
+        "params": {
+          "path_length": 4,
+          "obstacles": 1,
+          "start_blocks_type": "buggy_solution",
+          "bug_type": "incorrect_loop_condition",
+          "bug_config": {
+            "target": "loop",
+            "options": { "change_operator": "negate" }
+          }
+        }
+      },
+      "blockly_config": {
+        "toolbox_preset": "logic_basic"
+      },
+      "solution_config": {
+        "type": "reach_target",
+        "itemGoals": {}
+      }
+    },
+    {
+      "id": "debug-main-missing-safety-counter",
+      "level": 6,
+      "titleKey": "Challenge.debug-main-missing-safety-counter.Title",
+      "descriptionKey": "Challenge.debug-main-missing-safety-counter.Description",
+      "translations": {
+        "vi": {
+          "Challenge.debug-main-missing-safety-counter.Title": "Sửa lỗi: Thiếu cập nhật biến đếm",
+          "Challenge.debug-main-missing-safety-counter.Description": "Vòng lặp 'while' đang chạy vô hạn! Biến đếm không được cập nhật bên trong vòng lặp. Hãy thêm khối 'thay đổi biến' để vòng lặp dừng đúng lúc."
+        }
+      },
+      "generation_config": {
+        "map_type": "simple_path",
+        "logic_type": "variable_counter",
+        "num_variants": 1,
+        "params": {
+          "path_length": 3,
+          "items_to_place": ["crystal"],
+          "start_blocks_type": "buggy_solution",
+          "bug_type": "missing_variable_update",
+          "bug_config": {
+            "target": "loop"
+          }
+        }
+      },
+      "blockly_config": {
+        "toolbox_preset": "variables_basic"
+      },
+      "solution_config": {
+        "type": "reach_target",
+        "itemGoals": {"crystal": 1}
+      }
+    },
+
+    {
+      "id": "debug-main-incorrect-initial-value",
+      "level": 7,
+      "titleKey": "Challenge.debug-main-incorrect-initial-value.Title",
+      "descriptionKey": "Challenge.debug-main-incorrect-initial-value.Description",
+      "translations": {
+        "vi": {
+          "Challenge.debug-main-incorrect-initial-value.Title": "Sửa lỗi: Sai giá trị khởi tạo biến",
+          "Challenge.debug-main-incorrect-initial-value.Description": "Biến 'steps' đang được khởi tạo với giá trị sai, khiến vòng lặp không chạy đúng số lần. Hãy sửa lại giá trị khởi tạo!"
+        }
+      },
+      "generation_config": {
+        "map_type": "simple_path",
+        "logic_type": "variable_loop",
+        "num_variants": 1,
+        "params": {
+          "path_length": 4,
+          "items_to_place": ["crystal"],
+          "start_blocks_type": "buggy_solution",
+          "bug_type": "incorrect_initial_value",
+          "bug_config": {
+            "target": "variable",
+            "options": { "change_by": 1 }
+          }
+        }
+      },
+      "blockly_config": {
+        "toolbox_preset": "variables_basic"
+      },
+      "solution_config": {
+        "type": "reach_target",
+        "itemGoals": {"crystal": 1}
+      }
+    },
+    {
+      "id": "debug-main-incorrect-math-op",
+      "level": 8,
+      "titleKey": "Challenge.debug-main-incorrect-math-op.Title",
+      "descriptionKey": "Challenge.debug-main-incorrect-math-op.Description",
+      "translations": {
+        "vi": {
+          "Challenge.debug-main-incorrect-math-op.Title": "Sửa lỗi: Sai phép toán",
+          "Challenge.debug-main-incorrect-math-op.Description": "Chương trình đang dùng sai phép toán để tính tổng số bước. Hãy tìm và sửa lại toán tử để nhân vật đi đúng quãng đường!"
+        }
+      },
+      "generation_config": {
+        "map_type": "simple_path",
+        "logic_type": "math_basic",
+        "num_variants": 1,
+        "params": {
+          "path_length": 5,
+          "obstacles": 1,
+          "start_blocks_type": "buggy_solution",
+          "bug_type": "incorrect_math_operator",
+          "bug_config": {
+            "target": "main",
+            "options": { "change_op_from": "ADD", "to": "MINUS" }
+          }
+        }
+      },
+      "blockly_config": {
+        "toolbox_preset": "variables_full"
+      },
+      "solution_config": {
+        "type": "reach_target",
+        "itemGoals": {}
+      }
+    },
+
+    {
+      "id": "debug-main-redundant-blocks",
+      "level": 9,
+      "titleKey": "Challenge.debug-main-redundant-blocks.Title",
+      "descriptionKey": "Challenge.debug-main-redundant-blocks.Description",
+      "translations": {
+        "vi": {
+          "Challenge.debug-main-redundant-blocks.Title": "Sửa lỗi: Khối lệnh thừa",
+          "Challenge.debug-main-redundant-blocks.Description": "Chương trình chạy đúng nhưng có các khối lệnh không cần thiết. Hãy xóa bỏ chúng để làm cho code gọn gàng và hiệu quả hơn!"
+        }
+      },
+      "generation_config": {
+        "map_type": "simple_path",
+        "logic_type": "sequencing",
+        "num_variants": 1,
+        "params": {
+          "path_length": 3,
+          "start_blocks_type": "buggy_solution",
+          "bug_type": "redundant_blocks",
+          "bug_config": {
+            "target": "main",
+            "options": { "block_to_duplicate": "moveForward", "count": 1 }
+          }
+        }
+      },
+      "blockly_config": {
+        "toolbox_preset": "movement_only"
+      },
+      "solution_config": {
+        "type": "reach_target",
+        "itemGoals": {}
+      }
+    },
+    {
+      "id": "debug-main-optimization-no-loop",
+      "level": 10,
+      "titleKey": "Challenge.debug-main-optimization-no-loop.Title",
+      "descriptionKey": "Challenge.debug-main-optimization-no-loop.Description",
+      "translations": {
+        "vi": {
+          "Challenge.debug-main-optimization-no-loop.Title": "Sửa lỗi: Thiếu tối ưu hóa vòng lặp",
+          "Challenge.debug-main-optimization-no-loop.Description": "Chương trình này hoạt động, nhưng có thể được tối ưu hóa bằng cách sử dụng vòng lặp. Hãy tái cấu trúc code để sử dụng ít khối hơn!"
+        }
+      },
+      "generation_config": {
+        "map_type": "simple_path",
+        "logic_type": "sequencing",
+        "num_variants": 1,
+        "params": {
+          "path_length": 6,
+          "start_blocks_type": "buggy_solution",
+          "bug_type": "optimization_no_variable",
+          "bug_config": {
+            "target": "main"
+          }
+        }
+      },
+      "blockly_config": {
+        "toolbox_preset": "loops_basic"
+      },
+      "solution_config": {
+        "type": "reach_target",
+        "itemGoals": {}
+      }
+    },
+
+    {
+      "id": "debug-func-incorrect-logic",
+      "level": 11,
+      "titleKey": "Challenge.debug-func-incorrect-logic.Title",
+      "descriptionKey": "Challenge.debug-func-incorrect-logic.Description",
+      "translations": {
+        "vi": {
+          "Challenge.debug-func-incorrect-logic.Title": "Sửa lỗi: Logic hàm bị sai",
+          "Challenge.debug-func-incorrect-logic.Description": "Hàm 'turnAround' đang không quay đúng 180 độ. Có một lỗi logic bên trong định nghĩa hàm. Hãy sửa nó để hàm hoạt động chính xác!"
+        }
+      },
+      "generation_config": {
+        "map_type": "simple_path",
+        "logic_type": "functions_simple",
+        "num_variants": 1,
+        "params": {
+          "path_length": 2,
+          "turns": 2,
+          "start_blocks_type": "buggy_solution",
+          "bug_type": "incorrect_logic_in_function",
+          "bug_config": {
+            "target": "function_body",
+            "options": { "function_name": "turnAround", "remove_block_type": "maze_turn" }
+          }
+        }
+      },
+      "blockly_config": {
+        "toolbox_preset": "functions_basic"
+      },
+      "solution_config": {
+        "type": "reach_target",
+        "itemGoals": {}
+      }
+    },
+    {
+      "id": "debug-func-missing-block",
+      "level": 12,
+      "titleKey": "Challenge.debug-func-missing-block.Title",
+      "descriptionKey": "Challenge.debug-func-missing-block.Description",
+      "translations": {
+        "vi": {
+          "Challenge.debug-func-missing-block.Title": "Sửa lỗi: Thiếu lệnh trong hàm",
+          "Challenge.debug-func-missing-block.Description": "Hàm 'crossObstacle' đang thiếu một lệnh quan trọng để vượt qua chướng ngại vật. Hãy tìm và bổ sung lệnh còn thiếu vào định nghĩa hàm!"
+        }
+      },
+      "generation_config": {
+        "map_type": "simple_path",
+        "logic_type": "functions_simple",
+        "num_variants": 1,
+        "params": {
+          "path_length": 3,
+          "obstacles": 1,
+          "start_blocks_type": "buggy_solution",
+          "bug_type": "missing_block_in_function",
+          "bug_config": {
+            "target": "function_body",
+            "options": { "function_name": "crossObstacle", "remove_block_type": "moveForward", "after_block": "jump" }
+          }
+        }
+      },
+      "blockly_config": {
+        "toolbox_preset": "functions_basic"
+      },
+      "solution_config": {
+        "type": "reach_target",
+        "itemGoals": {}
+      }
+    },
+    {
+      "id": "debug-func-missing-return",
+      "level": 13,
+      "titleKey": "Challenge.debug-func-missing-return.Title",
+      "descriptionKey": "Challenge.debug-func-missing-return.Description",
+      "translations": {
+        "vi": {
+          "Challenge.debug-func-missing-return.Title": "Sửa lỗi: Thiếu lệnh trả về",
+          "Challenge.debug-func-missing-return.Description": "Hàm 'isPathClear' không trả về giá trị trong mọi trường hợp, gây ra lỗi. Hãy đảm bảo hàm luôn trả về 'TRUE' hoặc 'FALSE'!"
+        }
+      },
+      "generation_config": {
+        "map_type": "simple_path",
+        "logic_type": "functions_with_return",
+        "num_variants": 1,
+        "params": {
+          "path_length": 2,
+          "obstacles": 1,
+          "start_blocks_type": "buggy_solution",
+          "bug_type": "missing_return_statement",
+          "bug_config": {
+            "target": "function_body",
+            "options": { "function_name": "isPathClear", "remove_else_return": true }
+          }
+        }
+      },
+      "blockly_config": {
+        "toolbox_preset": "variables_full"
+      },
+      "solution_config": {
+        "type": "reach_target",
+        "itemGoals": {}
+      }
+    },
+    {
+      "id": "debug-func-infinite-recursion",
+      "level": 14,
+      "titleKey": "Challenge.debug-func-infinite-recursion.Title",
+      "descriptionKey": "Challenge.debug-func-infinite-recursion.Description",
+      "translations": {
+        "vi": {
+          "Challenge.debug-func-infinite-recursion.Title": "Sửa lỗi: Đệ quy vô hạn",
+          "Challenge.debug-func-infinite-recursion.Description": "Chương trình bị kẹt trong một vòng lặp vô hạn do hàm đệ quy thiếu điều kiện dừng. Hãy thêm điều kiện thoát để hàm dừng đúng lúc!"
+        }
+      },
+      "generation_config": {
+        "map_type": "simple_path",
+        "logic_type": "functions_recursive",
+        "num_variants": 1,
+        "params": {
+          "path_length": 3,
+          "start_blocks_type": "buggy_solution",
+          "bug_type": "infinite_recursion",
+          "bug_config": {
+            "target": "function_body",
+            "options": { "function_name": "moveToDestination", "remove_if_condition": true }
+          }
+        }
+      },
+      "blockly_config": {
+        "toolbox_preset": "functions_basic"
+      },
+      "solution_config": {
+        "type": "reach_target",
+        "itemGoals": {}
+      }
+    },
+    {
+      "id": "debug-func-incorrect-param-handling",
+      "level": 15,
+      "titleKey": "Challenge.debug-func-incorrect-param-handling.Title",
+      "descriptionKey": "Challenge.debug-func-incorrect-param-handling.Description",
+      "translations": {
+        "vi": {
+          "Challenge.debug-func-incorrect-param-handling.Title": "Sửa lỗi: Xử lý tham số sai",
+          "Challenge.debug-func-incorrect-param-handling.Description": "Hàm 'moveSteps' nhận một tham số nhưng lại không sử dụng nó đúng cách, khiến nhân vật di chuyển sai số bước. Hãy sửa logic bên trong hàm để nó dùng tham số chính xác!"
+        }
+      },
+      "generation_config": {
+        "map_type": "simple_path",
+        "logic_type": "functions_with_params",
+        "num_variants": 1,
+        "params": {
+          "path_length": 5,
+          "start_blocks_type": "buggy_solution",
+          "bug_type": "incorrect_parameter_handling",
+          "bug_config": {
+            "target": "function_body",
+            "options": { "function_name": "moveSteps", "replace_param_with_const": 1 }
+          }
+        }
+      },
+      "blockly_config": {
+        "toolbox_preset": "variables_full"
+      },
+      "solution_config": {
+        "type": "reach_target",
+        "itemGoals": {}
+      }
+    },
+
+    {
+      "id": "debug-call-incorrect-order",
+      "level": 16,
+      "titleKey": "Challenge.debug-call-incorrect-order.Title",
+      "descriptionKey": "Challenge.debug-call-incorrect-order.Description",
+      "translations": {
+        "vi": {
+          "Challenge.debug-call-incorrect-order.Title": "Sửa lỗi: Sai thứ tự gọi hàm",
+          "Challenge.debug-call-incorrect-order.Description": "Các hàm đang được gọi sai thứ tự, khiến nhân vật bỏ lỡ vật phẩm. Hãy sắp xếp lại các lệnh gọi hàm để hoàn thành nhiệm vụ!"
+        }
+      },
+      "generation_config": {
+        "map_type": "simple_path",
+        "logic_type": "functions_simple",
+        "num_variants": 1,
+        "params": {
+          "path_length": 2,
+          "items_to_place": ["crystal"],
+          "start_blocks_type": "buggy_solution",
+          "bug_type": "incorrect_function_call_order",
+          "bug_config": {
+            "target": "main",
+            "options": { "swap_calls": ["move", "collectItem"] }
+          }
+        }
+      },
+      "blockly_config": {
+        "toolbox_preset": "functions_basic"
+      },
+      "solution_config": {
+        "type": "reach_target",
+        "itemGoals": {"crystal": 1}
+      }
+    },
+    {
+      "id": "debug-call-missing-call",
+      "level": 17,
+      "titleKey": "Challenge.debug-call-missing-call.Title",
+      "descriptionKey": "Challenge.debug-call-missing-call.Description",
+      "translations": {
+        "vi": {
+          "Challenge.debug-call-missing-call.Title": "Sửa lỗi: Thiếu lệnh gọi hàm",
+          "Challenge.debug-call-missing-call.Description": "Bạn đã định nghĩa một hàm rất hữu ích, nhưng chương trình không làm gì cả! Có vẻ như bạn đã quên gọi hàm đó. Hãy thêm lệnh gọi hàm vào chương trình chính!"
+        }
+      },
+      "generation_config": {
+        "map_type": "simple_path",
+        "logic_type": "functions_simple",
+        "num_variants": 1,
+        "params": {
+          "path_length": 3,
+          "start_blocks_type": "buggy_solution",
+          "bug_type": "missing_function_call",
+          "bug_config": {
+            "target": "main",
+            "options": { "function_name_to_remove": "solvePath" }
+          }
+        }
+      },
+      "blockly_config": {
+        "toolbox_preset": "functions_basic"
+      },
+      "solution_config": {
+        "type": "reach_target",
+        "itemGoals": {}
+      }
+    },
+    {
+      "id": "debug-call-incorrect-argument",
+      "level": 18,
+      "titleKey": "Challenge.debug-call-incorrect-argument.Title",
+      "descriptionKey": "Challenge.debug-call-incorrect-argument.Description",
+      "translations": {
+        "vi": {
+          "Challenge.debug-call-incorrect-argument.Title": "Sửa lỗi: Sai tham số truyền vào",
+          "Challenge.debug-call-incorrect-argument.Description": "Hàm 'moveSteps' đang nhận một tham số không hợp lệ (ví dụ: số âm). Hãy sửa lại giá trị tham số để hàm hoạt động đúng!"
+        }
+      },
+      "generation_config": {
+        "map_type": "simple_path",
+        "logic_type": "functions_with_params",
+        "num_variants": 1,
+        "params": {
+          "path_length": 5,
+          "start_blocks_type": "buggy_solution",
+          "bug_type": "incorrect_parameter",
+          "bug_config": {
+            "target": "function_call",
+            "options": { "function_name": "moveSteps", "param_index": 0, "change_value_to": -2 }
+          }
+        }
+      },
+      "blockly_config": {
+        "toolbox_preset": "variables_full"
+      },
+      "solution_config": {
+        "type": "reach_target",
+        "itemGoals": {}
+      }
+    },
+
+    {
+      "id": "debug-func-optimization-no-abstraction",
+      "level": 19,
+      "titleKey": "Challenge.debug-func-optimization-no-abstraction.Title",
+      "descriptionKey": "Challenge.debug-func-optimization-no-abstraction.Description",
+      "translations": {
+        "vi": {
+          "Challenge.debug-func-optimization-no-abstraction.Title": "Sửa lỗi: Thiếu trừu tượng hóa (hàm)",
+          "Challenge.debug-func-optimization-no-abstraction.Description": "Chương trình có các đoạn code lặp lại nhưng không sử dụng hàm để tái sử dụng. Hãy tạo một hàm và gọi nó để tối ưu code!"
+        }
+      },
+      "generation_config": {
+        "map_type": "square_shape",
+        "logic_type": "sequencing",
+        "num_variants": 1,
+        "params": {
+          "side_length": 2,
+          "start_blocks_type": "buggy_solution",
+          "bug_type": "optimization_no_function",
+          "bug_config": {
+            "target": "main"
+          }
+        }
+      },
+      "blockly_config": {
+        "toolbox_preset": "functions_basic"
+      },
+      "solution_config": {
+        "type": "reach_target",
+        "itemGoals": {}
+      }
+    },
+    {
+      "id": "debug-func-overly-complex",
+      "level": 20,
+      "titleKey": "Challenge.debug-func-overly-complex.Title",
+      "descriptionKey": "Challenge.debug-func-overly-complex.Description",
+      "translations": {
+        "vi": {
+          "Challenge.debug-func-overly-complex.Title": "Sửa lỗi: Hàm quá phức tạp",
+          "Challenge.debug-func-overly-complex.Description": "Một hàm đang làm quá nhiều việc, khiến nó khó đọc và khó bảo trì. Hãy chia nhỏ hàm này thành các hàm nhỏ hơn, chuyên biệt hơn để tối ưu cấu trúc code!"
+        }
+      },
+      "generation_config": {
+        "map_type": "complex_path",
+        "logic_type": "functions_simple",
+        "num_variants": 1,
+        "params": {
+          "path_length": 10,
+          "obstacles": 2,
+          "items_to_place": ["crystal", "switch"],
+          "start_blocks_type": "buggy_solution",
+          "bug_type": "overly_complex_function",
+          "bug_config": {
+            "target": "function_body",
+            "options": { "function_name": "solveComplexPath" }
+          }
+        }
+      },
+      "blockly_config": {
+        "toolbox_preset": "functions_basic"
+      },
+      "solution_config": {
+        "type": "reach_target",
+        "itemGoals": {"crystal": 1, "switch": 1}
+      }
+    }
+  ]
+}

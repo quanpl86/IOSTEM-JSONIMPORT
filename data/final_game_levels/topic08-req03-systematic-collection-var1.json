@@ -186,7 +186,7 @@
         }
       ]
     },
-    "maxBlocks": 62,
+    "maxBlocks": 50,
     "startBlocks": "<xml><block type=\"maze_start\" deletable=\"false\" movable=\"false\"><statement name=\"DO\"></statement></block></xml>"
   },
   "gameConfig": {
@@ -1262,14 +1262,6 @@
         "position": {
           "x": 1,
           "y": 1,
-          "z": 6
-        }
-      },
-      {
-        "modelKey": "wall.stone01",
-        "position": {
-          "x": 1,
-          "y": 1,
           "z": 10
         }
       },
@@ -1326,6 +1318,14 @@
         "position": {
           "x": 2,
           "y": 1,
+          "z": 7
+        }
+      },
+      {
+        "modelKey": "wall.stone01",
+        "position": {
+          "x": 2,
+          "y": 1,
           "z": 8
         }
       },
@@ -1358,14 +1358,6 @@
         "position": {
           "x": 3,
           "y": 1,
-          "z": 6
-        }
-      },
-      {
-        "modelKey": "wall.stone01",
-        "position": {
-          "x": 3,
-          "y": 1,
           "z": 8
         }
       },
@@ -1430,6 +1422,14 @@
         "position": {
           "x": 4,
           "y": 1,
+          "z": 9
+        }
+      },
+      {
+        "modelKey": "wall.stone01",
+        "position": {
+          "x": 4,
+          "y": 1,
           "z": 10
         }
       },
@@ -1454,7 +1454,7 @@
         "position": {
           "x": 5,
           "y": 1,
-          "z": 8
+          "z": 6
         }
       },
       {
@@ -1471,6 +1471,14 @@
           "x": 6,
           "y": 1,
           "z": 0
+        }
+      },
+      {
+        "modelKey": "wall.stone01",
+        "position": {
+          "x": 6,
+          "y": 1,
+          "z": 1
         }
       },
       {
@@ -1486,23 +1494,7 @@
         "position": {
           "x": 6,
           "y": 1,
-          "z": 3
-        }
-      },
-      {
-        "modelKey": "wall.stone01",
-        "position": {
-          "x": 6,
-          "y": 1,
           "z": 4
-        }
-      },
-      {
-        "modelKey": "wall.stone01",
-        "position": {
-          "x": 6,
-          "y": 1,
-          "z": 5
         }
       },
       {
@@ -1550,6 +1542,30 @@
         "position": {
           "x": 7,
           "y": 1,
+          "z": 2
+        }
+      },
+      {
+        "modelKey": "wall.stone01",
+        "position": {
+          "x": 7,
+          "y": 1,
+          "z": 4
+        }
+      },
+      {
+        "modelKey": "wall.stone01",
+        "position": {
+          "x": 7,
+          "y": 1,
+          "z": 6
+        }
+      },
+      {
+        "modelKey": "wall.stone01",
+        "position": {
+          "x": 7,
+          "y": 1,
           "z": 8
         }
       },
@@ -1590,23 +1606,7 @@
         "position": {
           "x": 8,
           "y": 1,
-          "z": 5
-        }
-      },
-      {
-        "modelKey": "wall.stone01",
-        "position": {
-          "x": 8,
-          "y": 1,
           "z": 6
-        }
-      },
-      {
-        "modelKey": "wall.stone01",
-        "position": {
-          "x": 8,
-          "y": 1,
-          "z": 7
         }
       },
       {
@@ -1638,7 +1638,7 @@
         "position": {
           "x": 9,
           "y": 1,
-          "z": 2
+          "z": 6
         }
       },
       {
@@ -1756,25 +1756,25 @@
         "position": {
           "x": 3,
           "y": 1,
-          "z": 3
+          "z": 9
         }
       },
       {
         "id": "c2",
         "type": "crystal",
         "position": {
-          "x": 1,
+          "x": 7,
           "y": 1,
-          "z": 5
+          "z": 1
         }
       },
       {
         "id": "c3",
         "type": "crystal",
         "position": {
-          "x": 5,
+          "x": 7,
           "y": 1,
-          "z": 3
+          "z": 7
         }
       }
     ],
@@ -1790,27 +1790,19 @@
     "itemGoals": {
       "crystal": 3
     },
-    "optimalBlocks": 57,
-    "optimalLines": 56,
+    "optimalBlocks": 45,
+    "optimalLines": 33,
     "rawActions": [
       "turnRight",
       "moveForward",
       "moveForward",
       "moveForward",
       "moveForward",
-      "collect",
+      "moveForward",
+      "moveForward",
+      "moveForward",
+      "moveForward",
       "turnLeft",
-      "turnLeft",
-      "moveForward",
-      "moveForward",
-      "moveForward",
-      "moveForward",
-      "turnRight",
-      "moveForward",
-      "moveForward",
-      "moveForward",
-      "moveForward",
-      "turnRight",
       "moveForward",
       "moveForward",
       "collect",
@@ -1821,13 +1813,6 @@
       "turnRight",
       "moveForward",
       "moveForward",
-      "turnRight",
-      "moveForward",
-      "moveForward",
-      "turnLeft",
-      "moveForward",
-      "moveForward",
-      "turnRight",
       "moveForward",
       "moveForward",
       "moveForward",
@@ -1835,10 +1820,6 @@
       "moveForward",
       "moveForward",
       "turnRight",
-      "moveForward",
-      "moveForward",
-      "moveForward",
-      "moveForward",
       "moveForward",
       "moveForward",
       "moveForward",
@@ -1846,7 +1827,7 @@
       "turnRight",
       "moveForward",
       "moveForward",
-      "turnRight",
+      "turnLeft",
       "moveForward",
       "moveForward",
       "moveForward",
@@ -1857,12 +1838,24 @@
       "turnLeft",
       "moveForward",
       "moveForward",
-      "turnRight",
-      "moveForward",
-      "moveForward",
-      "turnLeft",
-      "turnLeft",
       "collect",
+      "turnLeft",
+      "turnLeft",
+      "moveForward",
+      "moveForward",
+      "turnRight",
+      "moveForward",
+      "moveForward",
+      "moveForward",
+      "moveForward",
+      "turnRight",
+      "moveForward",
+      "moveForward",
+      "moveForward",
+      "moveForward",
+      "moveForward",
+      "moveForward",
+      "turnLeft",
       "moveForward",
       "moveForward",
       "turnLeft",
@@ -1871,82 +1864,61 @@
       "turnRight",
       "moveForward",
       "moveForward",
+      "turnLeft",
+      "moveForward",
+      "moveForward",
+      "moveForward",
+      "moveForward",
+      "turnLeft",
+      "moveForward",
+      "moveForward",
+      "turnLeft",
+      "moveForward",
+      "moveForward",
+      "collect",
+      "turnLeft",
+      "turnLeft",
+      "moveForward",
+      "moveForward",
       "turnRight",
-      "moveForward",
-      "moveForward",
-      "moveForward",
-      "moveForward",
-      "turnLeft",
-      "moveForward",
-      "moveForward",
-      "turnLeft",
-      "moveForward",
-      "moveForward",
-      "moveForward",
-      "moveForward",
-      "moveForward",
-      "moveForward",
       "moveForward",
       "moveForward"
     ],
     "structuredSolution": [
       "DEFINE PROCEDURE_1:",
-      "  repeat (3) do:",
-      "    moveForward",
       "DEFINE PROCEDURE_2:",
-      "  moveForward",
-      "  moveForward",
-      "  maze_turn",
       "DEFINE PROCEDURE_3:",
-      "  moveForward",
-      "  moveForward",
-      "  maze_turn",
       "",
       "MAIN PROGRAM:",
       "  On start:",
       "  maze_turn",
       "  CALL PROCEDURE_1",
-      "  moveForward",
-      "  collect",
-      "  maze_turn",
-      "  maze_turn",
+      "  CALL PROCEDURE_1",
+      "  CALL PROCEDURE_3",
+      "  CALL PROCEDURE_1",
       "  repeat (2) do:",
       "    CALL PROCEDURE_1",
-      "    moveForward",
       "    maze_turn",
       "  moveForward",
       "  moveForward",
-      "  collect",
       "  maze_turn",
-      "  maze_turn",
-      "  CALL PROCEDURE_2",
+      "  CALL PROCEDURE_1",
       "  CALL PROCEDURE_2",
       "  CALL PROCEDURE_3",
-      "  CALL PROCEDURE_2",
-      "  CALL PROCEDURE_1",
       "  CALL PROCEDURE_1",
       "  maze_turn",
-      "  CALL PROCEDURE_1",
-      "  CALL PROCEDURE_1",
-      "  CALL PROCEDURE_2",
-      "  CALL PROCEDURE_2",
       "  CALL PROCEDURE_1",
       "  moveForward",
+      "  moveForward",
+      "  CALL PROCEDURE_2",
+      "  CALL PROCEDURE_2",
       "  maze_turn",
-      "  CALL PROCEDURE_3",
-      "  CALL PROCEDURE_2",
-      "  CALL PROCEDURE_3",
-      "  maze_turn",
-      "  collect",
-      "  CALL PROCEDURE_3",
-      "  CALL PROCEDURE_2",
-      "  CALL PROCEDURE_2",
-      "  CALL PROCEDURE_1",
+      "  moveForward",
       "  moveForward",
       "  maze_turn",
+      "  CALL PROCEDURE_1",
+      "  CALL PROCEDURE_2",
       "  CALL PROCEDURE_3",
-      "  CALL PROCEDURE_1",
-      "  CALL PROCEDURE_1",
       "  moveForward",
       "  moveForward"
     ]

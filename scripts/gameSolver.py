@@ -449,6 +449,10 @@ def synthesize_program(actions: List[Action], world: GameWorld) -> Dict:
     # [MỚI] Lấy logic_type để quyết định cách tổng hợp code
     # Điều này rất quan trọng cho các bài toán về biến
     logic_type = world.solution_config.get('logic_type', 'sequencing')
+    # [MỚI] Lấy cấu hình cấu trúc vòng lặp mong muốn (single, nested, auto)
+    # Tham số này sẽ được truyền từ file curriculum.
+    loop_structure_config = world.solution_config.get('loop_structure', 'auto')
+
     # [CẢI TIẾN] Đọc cấu hình thuật toán từ curriculum
     algorithm_template = world.solution_config.get('algorithm_template')
 
@@ -458,29 +462,80 @@ def synthesize_program(actions: List[Action], world: GameWorld) -> Dict:
         # mà không cố gắng tạo ra các hàm (function) phức tạp.
         if not actions: return {"main": [], "procedures": {}}
 
-        # Logic cho bài toán dùng biến để lặp
+        def find_factors(n):
+            """Tìm các cặp thừa số của n, ưu tiên các cặp không quá chênh lệch."""
+            if n < 4: return None # Chỉ tạo lồng nhau cho số lần lặp >= 4
+            factors = []
+            for i in range(2, int(n**0.5) + 1):
+                if n % i == 0:
+                    factors.append((n // i, i))
+            
+            if not factors: return None
+
+            # Ưu tiên cặp có chênh lệch nhỏ nhất (ví dụ: 4x2 cho 8, thay vì 8x1)
+            # Sắp xếp theo chênh lệch tăng dần
+            factors.sort(key=lambda p: abs(p[0] - p[1]))
+            # Trả về cặp tốt nhất (outer_loops, inner_loops)
+            return factors[0]
+
+        # [REWRITTEN] Logic cho bài toán dùng biến để lặp (variable_loop)
         if logic_type == 'variable_loop':
-            # Tìm hành động lặp lại nhiều nhất, thường là 'moveForward'
-            action_counts = Counter(a for a in actions if a in ['moveForward', 'collect'])
-            if not action_counts: # Nếu không có hành động nào, trả về giải pháp tuần tự
+            # Tìm chuỗi con lặp lại nhiều nhất, ví dụ: ['moveForward', 'collect']
+            best_seq, best_repeats, best_len = None, 0, 0
+            for seq_len in range(1, len(actions) // 2 + 1):
+                for i in range(len(actions) - seq_len):
+                    sequence = tuple(actions[i:i+seq_len])
+                    repeats = 1
+                    # Đếm số lần chuỗi này lặp lại liên tiếp
+                    while i + (repeats + 1) * seq_len <= len(actions) and \
+                          tuple(actions[i + repeats * seq_len : i + (repeats + 1) * seq_len]) == sequence:
+                        repeats += 1
+                    
+                    if repeats > 1 and repeats * seq_len > best_repeats * best_len:
+                        best_seq, best_repeats, best_len = list(sequence), repeats, seq_len
+
+            if best_seq:
+                # Tìm vị trí bắt đầu của chuỗi lặp
+                start_index = -1
+                for i in range(len(actions)):
+                    if actions[i:i+best_len] == best_seq:
+                        start_index = i
+                        break
+                
+                # Tách các hành động thành 3 phần: trước, trong và sau vòng lặp
+                before_loop = actions[:start_index]
+                loop_body_actions = best_seq
+                after_loop = actions[start_index + best_repeats * best_len:]
+
+                # [REWRITTEN] Logic tạo vòng lặp đơn hoặc lồng nhau dựa trên cấu hình
+                factors = None
+                if loop_structure_config == 'nested':
+                    factors = find_factors(best_repeats)
+                    if not factors: print(f"   - ⚠️ Cảnh báo: Yêu cầu vòng lặp lồng nhau nhưng không thể phân tích {best_repeats} thành thừa số. Sẽ dùng vòng lặp đơn.")
+                elif loop_structure_config == 'auto':
+                    factors = find_factors(best_repeats)
+                # Nếu loop_structure_config == 'single', factors sẽ luôn là None
+                
+                main_program = compress_actions_to_structure(before_loop, available_blocks)
+
+                if factors: # Nếu tìm thấy thừa số, tạo vòng lặp lồng nhau
+                    outer_loops, inner_loops = factors
+                    main_program.append({"type": "variables_set", "variable": "steps", "value": outer_loops})
+                    nested_loop_body = {
+                        "type": "maze_repeat", "times": inner_loops,
+                        "body": compress_actions_to_structure(loop_body_actions, available_blocks)
+                    }
+                    main_program.append({"type": "maze_repeat_variable", "variable": "steps", "body": [nested_loop_body]})
+                else: # Nếu không, giữ nguyên logic vòng lặp đơn
+                    main_program.append({"type": "variables_set", "variable": "steps", "value": best_repeats})
+                    main_program.append({
+                        "type": "maze_repeat_variable", "variable": "steps",
+                        "body": compress_actions_to_structure(loop_body_actions, available_blocks)
+                    })
+                main_program.extend(compress_actions_to_structure(after_loop, available_blocks))
+                return {"main": main_program, "procedures": {}}
+            else: # Nếu không tìm thấy chuỗi lặp, trả về giải pháp tuần tự
                 return {"main": compress_actions_to_structure(actions, available_blocks), "procedures": {}}
-            
-            most_common_action, num_repeats = action_counts.most_common(1)[0]
-            
-            # Tạo lời giải: set steps = N; repeat (steps) { action }
-            main_program = [
-                {"type": "variables_set", "variable": "steps", "value": num_repeats},
-                {
-                    "type": "maze_repeat_variable", # Loại khối đặc biệt để chỉ định dùng biến
-                    "variable": "steps",
-                    "body": [{"type": f"maze_{most_common_action}" if most_common_action in ['collect', 'toggleSwitch'] else most_common_action}]
-                }
-            ]
-            # Thêm các hành động còn lại (nếu có)
-            # Đây là một cách đơn giản hóa, có thể cần cải tiến
-            remaining_actions_after_loop = [a for a in actions if a != most_common_action or (actions.count(a) > num_repeats)]
-            main_program.extend(compress_actions_to_structure(remaining_actions_after_loop, available_blocks))
-            return {"main": main_program, "procedures": {}}
 
         # Logic cho bài toán dùng biểu thức toán học
         if logic_type in ['math_expression_loop', 'math_complex', 'math_basic']:
@@ -600,18 +655,61 @@ def format_program(program: Dict, indent=0) -> str:
     body_to_print = program.get("main", program.get("body", []))
     for block in body_to_print:
         block_type = block.get("type")
-        if block_type == 'maze_repeat':
+        if block_type in ['maze_repeat', 'maze_repeat_variable', 'maze_repeat_expression']:
             output += f"{prefix}repeat ({block['times']}) do:\n"
             output += format_program(block, indent + 1)
         elif block_type == 'CALL':
             output += f"{prefix}CALL {block['name']}\n"
         else:
-            output += f"{prefix}{block_type}\n"
+            output += f"{prefix}{block.get('type')}\n"
     return output
 
 def format_program_for_json(program: Dict[str, Any]) -> List[str]:
     """Tạo ra một list các dòng string để lưu vào JSON, giữ nguyên logic cũ nếu cần."""
-    return format_program(program).strip().split('\n')
+    # [REWRITTEN] Hàm helper để in chương trình ra màn hình theo cấu trúc Blockly.
+    # Phiên bản này sẽ in rõ ràng các khối định nghĩa hàm và các loại vòng lặp.
+    def _format_recursive(program_dict: Dict, indent_level=0) -> List[str]:
+        lines = []
+        prefix = "  " * indent_level
+
+        # In các khối định nghĩa hàm trước
+        if indent_level == 0 and program_dict.get("procedures"):
+            for name, body in program_dict["procedures"].items():
+                lines.append(f"{prefix}DEFINE {name}:")
+                lines.extend(_format_recursive({"main": body}, indent_level + 1))
+            if program_dict.get("main"):
+                lines.append("") # Thêm dòng trống ngăn cách
+
+        # In chương trình chính
+        if indent_level == 0:
+            lines.append(f"{prefix}MAIN PROGRAM:")
+            lines.append(f"{prefix}  On start:")
+            body_to_print = program_dict.get("main", [])
+            lines.extend(_format_recursive({"body": body_to_print}, indent_level + 1))
+        else: # Đệ quy cho body của hàm/vòng lặp
+            body_to_print = program_dict.get("body", [])
+            for block in body_to_print:
+                block_type = block.get("type")
+                if block_type == 'maze_repeat':
+                    lines.append(f"{prefix}repeat ({block['times']}) do:")
+                    lines.extend(_format_recursive(block, indent_level + 1))
+                elif block_type == 'maze_repeat_variable':
+                    lines.append(f"{prefix}maze_repeat_variable")
+                    lines.extend(_format_recursive(block, indent_level + 1))
+                elif block_type == 'maze_repeat_expression':
+                    lines.append(f"{prefix}maze_repeat_expression")
+                    lines.extend(_format_recursive(block, indent_level + 1))
+                elif block_type == 'variables_set':
+                    var_name = block.get('variable', 'steps')
+                    value = block.get('value', 0)
+                    lines.append(f"{prefix}variables_set_to {var_name} {value}")
+                elif block_type == 'CALL':
+                    lines.append(f"{prefix}CALL {block['name']}")
+                else:
+                    lines.append(f"{prefix}{block_type}")
+        return lines
+
+    return _format_recursive(program)
 
 def calculate_accurate_optimal_blocks(level_data: Dict[str, Any], verbose=True, print_solution=False, return_solution=False) -> Optional[Any]:
     """

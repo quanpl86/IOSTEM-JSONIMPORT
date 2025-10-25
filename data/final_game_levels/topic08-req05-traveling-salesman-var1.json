@@ -1662,7 +1662,15 @@
         "position": {
           "x": 1,
           "y": 1,
-          "z": 6
+          "z": 2
+        }
+      },
+      {
+        "modelKey": "wall.stone01",
+        "position": {
+          "x": 1,
+          "y": 1,
+          "z": 4
         }
       },
       {
@@ -1694,14 +1702,6 @@
         "position": {
           "x": 2,
           "y": 1,
-          "z": 3
-        }
-      },
-      {
-        "modelKey": "wall.stone01",
-        "position": {
-          "x": 2,
-          "y": 1,
           "z": 4
         }
       },
@@ -1710,7 +1710,7 @@
         "position": {
           "x": 2,
           "y": 1,
-          "z": 5
+          "z": 6
         }
       },
       {
@@ -1718,7 +1718,7 @@
         "position": {
           "x": 2,
           "y": 1,
-          "z": 6
+          "z": 7
         }
       },
       {
@@ -1750,6 +1750,14 @@
         "position": {
           "x": 2,
           "y": 1,
+          "z": 11
+        }
+      },
+      {
+        "modelKey": "wall.stone01",
+        "position": {
+          "x": 2,
+          "y": 1,
           "z": 12
         }
       },
@@ -1766,7 +1774,15 @@
         "position": {
           "x": 3,
           "y": 1,
-          "z": 8
+          "z": 2
+        }
+      },
+      {
+        "modelKey": "wall.stone01",
+        "position": {
+          "x": 3,
+          "y": 1,
+          "z": 4
         }
       },
       {
@@ -1798,23 +1814,7 @@
         "position": {
           "x": 4,
           "y": 1,
-          "z": 3
-        }
-      },
-      {
-        "modelKey": "wall.stone01",
-        "position": {
-          "x": 4,
-          "y": 1,
           "z": 4
-        }
-      },
-      {
-        "modelKey": "wall.stone01",
-        "position": {
-          "x": 4,
-          "y": 1,
-          "z": 5
         }
       },
       {
@@ -1846,6 +1846,14 @@
         "position": {
           "x": 4,
           "y": 1,
+          "z": 9
+        }
+      },
+      {
+        "modelKey": "wall.stone01",
+        "position": {
+          "x": 4,
+          "y": 1,
           "z": 10
         }
       },
@@ -1870,7 +1878,7 @@
         "position": {
           "x": 5,
           "y": 1,
-          "z": 2
+          "z": 4
         }
       },
       {
@@ -1918,7 +1926,23 @@
         "position": {
           "x": 6,
           "y": 1,
+          "z": 3
+        }
+      },
+      {
+        "modelKey": "wall.stone01",
+        "position": {
+          "x": 6,
+          "y": 1,
           "z": 4
+        }
+      },
+      {
+        "modelKey": "wall.stone01",
+        "position": {
+          "x": 6,
+          "y": 1,
+          "z": 5
         }
       },
       {
@@ -1942,14 +1966,6 @@
         "position": {
           "x": 6,
           "y": 1,
-          "z": 9
-        }
-      },
-      {
-        "modelKey": "wall.stone01",
-        "position": {
-          "x": 6,
-          "y": 1,
           "z": 10
         }
       },
@@ -1974,23 +1990,7 @@
         "position": {
           "x": 7,
           "y": 1,
-          "z": 4
-        }
-      },
-      {
-        "modelKey": "wall.stone01",
-        "position": {
-          "x": 7,
-          "y": 1,
-          "z": 6
-        }
-      },
-      {
-        "modelKey": "wall.stone01",
-        "position": {
-          "x": 7,
-          "y": 1,
-          "z": 10
+          "z": 8
         }
       },
       {
@@ -2030,6 +2030,14 @@
         "position": {
           "x": 8,
           "y": 1,
+          "z": 3
+        }
+      },
+      {
+        "modelKey": "wall.stone01",
+        "position": {
+          "x": 8,
+          "y": 1,
           "z": 4
         }
       },
@@ -2070,6 +2078,14 @@
         "position": {
           "x": 8,
           "y": 1,
+          "z": 9
+        }
+      },
+      {
+        "modelKey": "wall.stone01",
+        "position": {
+          "x": 8,
+          "y": 1,
           "z": 10
         }
       },
@@ -2094,31 +2110,7 @@
         "position": {
           "x": 9,
           "y": 1,
-          "z": 2
-        }
-      },
-      {
-        "modelKey": "wall.stone01",
-        "position": {
-          "x": 9,
-          "y": 1,
           "z": 4
-        }
-      },
-      {
-        "modelKey": "wall.stone01",
-        "position": {
-          "x": 9,
-          "y": 1,
-          "z": 8
-        }
-      },
-      {
-        "modelKey": "wall.stone01",
-        "position": {
-          "x": 9,
-          "y": 1,
-          "z": 10
         }
       },
       {
@@ -2150,7 +2142,7 @@
         "position": {
           "x": 10,
           "y": 1,
-          "z": 4
+          "z": 3
         }
       },
       {
@@ -2158,7 +2150,7 @@
         "position": {
           "x": 10,
           "y": 1,
-          "z": 5
+          "z": 4
         }
       },
       {
@@ -2174,6 +2166,14 @@
         "position": {
           "x": 10,
           "y": 1,
+          "z": 7
+        }
+      },
+      {
+        "modelKey": "wall.stone01",
+        "position": {
+          "x": 10,
+          "y": 1,
           "z": 8
         }
       },
@@ -2182,7 +2182,23 @@
         "position": {
           "x": 10,
           "y": 1,
+          "z": 9
+        }
+      },
+      {
+        "modelKey": "wall.stone01",
+        "position": {
+          "x": 10,
+          "y": 1,
           "z": 10
+        }
+      },
+      {
+        "modelKey": "wall.stone01",
+        "position": {
+          "x": 10,
+          "y": 1,
+          "z": 11
         }
       },
       {
@@ -2199,22 +2215,6 @@
           "x": 11,
           "y": 1,
           "z": 0
-        }
-      },
-      {
-        "modelKey": "wall.stone01",
-        "position": {
-          "x": 11,
-          "y": 1,
-          "z": 6
-        }
-      },
-      {
-        "modelKey": "wall.stone01",
-        "position": {
-          "x": 11,
-          "y": 1,
-          "z": 10
         }
       },
       {
@@ -2348,16 +2348,16 @@
         "position": {
           "x": 9,
           "y": 1,
-          "z": 5
+          "z": 3
         }
       },
       {
         "id": "c2",
         "type": "crystal",
         "position": {
-          "x": 11,
+          "x": 1,
           "y": 1,
-          "z": 5
+          "z": 11
         }
       }
     ],

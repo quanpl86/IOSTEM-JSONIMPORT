@@ -21,7 +21,11 @@ from scripts.gameSolver import solve_map_and_get_solution
 from bug_generator.service import create_bug # [THAY ĐỔI] Import hàm điều phối mới
 # --- [MỚI] Tích hợp tính năng tính toán số dòng code ---
 # Import các hàm cần thiết trực tiếp từ calculate_lines.py
-from scripts.calculate_lines import calculate_logical_lines_py, translate_structured_solution_to_js
+from scripts.calculate_lines import (
+    calculate_logical_lines_py,
+    translate_structured_solution_to_js,
+    calculate_optimal_lines_from_structured  # THÊM DÒNG NÀY
+)
 # ---------------------------------------------------------
 import re
 import xml.etree.ElementTree as ET
@@ -368,15 +372,13 @@ def main():
                     optimal_lloc = 0
                     if solution_result and solution_result.get('structuredSolution'):
                         try:
-                            # Chuyển đổi lời giải có cấu trúc sang JS và tính LLOC
-                            js_structured = translate_structured_solution_to_js(
-                                solution_result['structuredSolution'], 
-                                solution_result.get('raw_actions', [])
+                            # ƯU TIÊN: Tính trực tiếp từ structuredSolution → nhanh, chính xác, không cần raw_actions
+                            optimal_lloc = calculate_optimal_lines_from_structured(
+                                solution_result['structuredSolution']
                             )
-                            optimal_lloc = calculate_logical_lines_py(js_structured)
                         except Exception as e:
-                            print(f"   - ⚠️ Cảnh báo: Lỗi khi tính toán optimalLinesOfCode: {e}")
-                            optimal_lloc = 0 # Gán giá trị mặc định nếu có lỗi
+                            print(f"   - Warning: Lỗi khi tính optimalLines: {e}")
+                            optimal_lloc = 0
 
                     # --- Logic mới để sinh startBlocks động cho các thử thách FixBug ---
                     final_inner_blocks = ''
